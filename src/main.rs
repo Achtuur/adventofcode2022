@@ -1,29 +1,25 @@
-mod day1;
-
-
-use day1::Day1;
-use std::path::PathBuf;
-use regex::Regex;
+#![allow(non_snake_case)]
+mod days;
+use std::time::Instant;
 
 ///Type of input file to read
-pub enum InputType {
-    Test,
-    A,
-    B,
-}
+use days::*;
 
-pub trait AdventDay {
-    fn A(&self, it: InputType) -> String;
-    fn B(&self, it: InputType) -> String;
-}
+use day1::Day1;
+use day2::Day2;
+use day3::Day3;
 
 fn main() {
-    let it = InputType::Test;
+    // let it = InputType::Test;
+    let it = InputType::Real;
 
     let day = Day1::new();
-    let ansA = day.A(it);
-    println!("ansA: {0:?}", ansA);
 
-    // let ansB = day.B(it);
-    // println!("ansB: {0:?}", ansB);
+    let t = Instant::now();
+    let ansA = day.A(&it);
+    println!("ansA: {0:?}\n time: {1:?}", ansA, t.elapsed());
+
+    let t = Instant::now();
+    let ansB = day.B(&it);
+    println!("ansB: {0:?}\n time: {1:?}", ansB, t.elapsed());
 }
