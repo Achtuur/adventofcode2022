@@ -27,12 +27,12 @@ impl AdventDay for Day1 {
     }
 
     fn B(&self, it: &InputType) -> String {
-        println!("Self::get_path(it): {0:?}", Self::get_path(it));
         let input = std::fs::read_to_string(Self::get_path(it))
             .expect("Reading input failed, file doesn't exist most likely");
         let calories = get_calories(&input);
+
         let mut cvec: Vec<u32> = calories.collect::<Vec<u32>>();
-        cvec.sort_by(|a, b| b.partial_cmp(a).unwrap());
+        cvec.sort_by(|a, b| b.partial_cmp(a).unwrap()); //sort descending
         (cvec[0] + cvec[1] + cvec[2]).to_string()
     }
 }
