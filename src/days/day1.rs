@@ -18,67 +18,31 @@ impl Day1 {
 
 impl AdventDay for Day1 {
     fn A(&self, it: &InputType) -> String {
-        println!("Self::get_path(it): {0:?}", Self::get_path(it));
-        let input = std::fs::read_to_string(Self::get_path(it))
+        let inputraw = std::fs::read_to_string(Self::get_path(it))
             .expect("Reading input failed, file doesn't exist most likely");
-        let reg = Regex::new(r"\r\n").expect("invalid regex"); //split by empty lines
-        let input: Vec<&str> = reg.split(&input).into_iter().collect();
 
-        let mut max = 0;
-        let mut stack: Vec<u32> = Vec::<u32>::new();
+        let calories = get_calories(&inputraw);
 
-        for i in 0..input.len() {
-            let line = input[i];
-            if line.is_empty() || i == input.len() - 1 {
-                let x = stack.iter().sum(); // get sum of calories
-                if x > max {
-                    max = x;
-                }
-                stack.clear();
-            } else {
-                stack.push(line.parse::<u32>().expect("pushing NaN"));
-            }
-        }
-
-        max.to_string()
+        calories.max().unwrap().to_string()
     }
 
     fn B(&self, it: &InputType) -> String {
         println!("Self::get_path(it): {0:?}", Self::get_path(it));
         let input = std::fs::read_to_string(Self::get_path(it))
             .expect("Reading input failed, file doesn't exist most likely");
-        let reg = Regex::new(r"\r\n").expect("invalid regex"); //split by empty lines
-        let input: Vec<&str> = reg.split(&input).into_iter().collect();
-
-        let mut snacks: Vec<u32> = Vec::<u32>::new();
-        let mut stack: Vec<u32> = Vec::<u32>::new();
-
-        for i in 0..input.len() {
-            let line = input[i];
-            let last = i == input.len() - 1;
-            if line.is_empty() || last {
-                let x = if last {
-                    line.parse::<u32>().expect("NaN")
-                } else {
-                    stack.iter().sum() // get sum of calories
-                };
-                
-                if snacks.len() < 3 {
-                    snacks.push(x)
-                } else {
-                    for i in 0..3 {
-                        if x > snacks[i] {
-                            snacks[i] = x;
-                            break;
-                        }
-                    }
-                }
-                snacks.sort();
-                stack.clear();
-            } else {
-                stack.push(line.parse::<u32>().expect("pushing NaN"));
-            }
-        }
-        (snacks.into_iter().sum::<u32>()).to_string()
+        let calories = get_calories(&input);
+        let mut cvec: Vec<u32> = calories.collect::<Vec<u32>>();
+        cvec.sort_by(|a, b| b.partial_cmp(a).unwrap());
+        (cvec[0] + cvec[1] + cvec[2]).to_string()
     }
+}
+
+fn get_calories(input: &String) -> impl Iterator<Item = u32> + '_ {
+    input.trim().split("\r\n\r\n").map(|elf| {
+        elf.split('\n')
+            .map(|cookie| {
+                return cookie.trim().parse::<u32>().unwrap();
+            })
+            .sum::<u32>()
+    })
 }

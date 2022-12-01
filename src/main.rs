@@ -10,8 +10,8 @@ use day2::Day2;
 use day3::Day3;
 
 fn main() {
-    // let it = InputType::Test;
-    let it = InputType::Real;
+    let it = InputType::Test;
+    // let it = InputType::Real;
 
     let day = Day1::new();
 
