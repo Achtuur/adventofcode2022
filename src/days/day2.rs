@@ -21,17 +21,10 @@ impl AdventDay for Day2 {
     fn A(&self, it: &InputType) -> String {
         let input = std::fs::read_to_string(Self::get_path(it))
             .expect("Reading input failed, file doesn't exist most likely");
-            
-        let shape = HashMap::from([("X", 1), ("Y", 2), ("Z", 3)]);
-        let win: HashMap<&str, i32> = HashMap::from([
-            ("AX", 3), ("AY", 6), ("AZ", 0),
-            ("BX", 0), ("BY", 3), ("BZ", 6),
-            ("CX", 6), ("CY", 0), ("CZ", 3),
-        ]);
 
         let points: i32 = input.trim().split('\n').map(|game| {
             let hands: Vec<&str> = game.split(' ').into_iter().map(|x| x.trim()).collect();
-            shape[hands[1]] + win[concat(hands[0], hands[1]).as_str()]
+            shape_points(hands[1]) + match_points_A(hands[0], hands[1])
         }).sum();
         points.to_string()
     }
@@ -40,21 +33,52 @@ impl AdventDay for Day2 {
         let input = std::fs::read_to_string(Self::get_path(it))
             .expect("Reading input failed, file doesn't exist most likely");
 
-        let shape = HashMap::from([("X", 1), ("Y", 2), ("Z", 3)]);
-        let win: HashMap<&str, i32> = HashMap::from([
-            ("AX", 0 + shape["Z"]), ("AY", 3 + shape["X"]), ("AZ", 6 + shape["Y"]),
-            ("BX", 0 + shape["X"]), ("BY", 3 + shape["Y"]), ("BZ", 6 + shape["Z"]),
-            ("CX", 0 + shape["Y"]), ("CY", 3 + shape["Z"]), ("CZ", 6 + shape["X"]),
-        ]);
-
         let points: i32 = input.trim().split('\n').map(|game| {
             let hands: Vec<&str> = game.split(' ').into_iter().map(|x| x.trim()).collect();
-            win[concat(hands[0], hands[1]).as_str()]
+            match_points_B(hands[0], hands[1])
         }).sum();
         points.to_string()
     }
 }
 
-fn concat(a: &str, b: &str) -> String {
-    format!("{}{}", a, b)
+fn shape_points(played: &str) -> i32 {
+    match played {
+        "X" => 1,
+        "Y" => 2,
+        "Z" => 3,
+        _ => 0,
+    }
 }
+
+fn match_points_A(opponent: &str, played: &str) -> i32 {
+    match (opponent, played) {
+        ("A", "X") => 3,
+        ("A", "Y") => 6,
+        ("A", "Z") => 0,
+
+        ("B", "X") => 0,
+        ("B", "Y") => 3,
+        ("B", "Z") => 6,
+
+        ("C", "X") => 6,
+        ("C", "Y") => 0,
+        ("C", "Z") => 3,
+        _ => 0,
+    }
+}
+
+fn match_points_B(opponent: &str, played: &str) -> i32 {
+    match (opponent, played) {
+        ("A", "X") => 3,
+        ("A", "Y") => 4,
+        ("A", "Z") => 8,
+        ("B", "X") => 1,
+        ("B", "Y") => 5,
+        ("B", "Z") => 9,
+        ("C", "X") => 2,
+        ("C", "Y") => 6,
+        ("C", "Z") => 7,
+        _ => 0,
+    }
+}
+
