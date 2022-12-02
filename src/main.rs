@@ -1,4 +1,4 @@
-#![allow(non_snake_case)]
+#![allow(non_snake_case, unused_imports)]
 mod days;
 use std::time::Instant;
 
@@ -10,10 +10,10 @@ use day2::Day2;
 use day3::Day3;
 
 fn main() {
-    let it = InputType::Test;
-    // let it = InputType::Real;
+    // let it = InputType::Test;
+    let it = InputType::Real;
 
-    let day = Day1::new();
+    let day = Day2::new();
 
     let t = Instant::now();
     let ansA = day.A(&it);
