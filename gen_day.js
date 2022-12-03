@@ -29,8 +29,8 @@ impl Day${day} {
 
     fn get_path(it: &InputType) -> PathBuf {
         match it {
-            InputType::Test => PathBuf::from("./data/day1/test.txt"),
-            InputType::Real => PathBuf::from("./data/day1/real.txt"),
+            InputType::Test => PathBuf::from("./data/day${day}/test.txt"),
+            InputType::Real => PathBuf::from("./data/day${day}/real.txt"),
         }
     }
 }
