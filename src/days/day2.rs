@@ -1,4 +1,4 @@
-use std::{path::PathBuf, collections::HashMap};
+use std::{collections::HashMap, path::PathBuf};
 
 use super::*;
 
@@ -22,10 +22,14 @@ impl AdventDay for Day2 {
         let input = std::fs::read_to_string(Self::get_path(it))
             .expect("Reading input failed, file doesn't exist most likely");
 
-        let points: i32 = input.trim().split('\n').map(|game| {
-            let hands: Vec<&str> = game.split(' ').into_iter().map(|x| x.trim()).collect();
-            shape_points(hands[1]) + match_points_A(hands[0], hands[1])
-        }).sum();
+        let points: i32 = input
+            .trim()
+            .split('\n')
+            .map(|game| {
+                let hands: Vec<&str> = game.split(' ').into_iter().map(|x| x.trim()).collect();
+                shape_points(hands[1]) + match_points_A(hands[0], hands[1])
+            })
+            .sum();
         points.to_string()
     }
 
@@ -33,10 +37,14 @@ impl AdventDay for Day2 {
         let input = std::fs::read_to_string(Self::get_path(it))
             .expect("Reading input failed, file doesn't exist most likely");
 
-        let points: i32 = input.trim().split('\n').map(|game| {
-            let hands: Vec<&str> = game.split(' ').into_iter().map(|x| x.trim()).collect();
-            match_points_B(hands[0], hands[1])
-        }).sum();
+        let points: i32 = input
+            .trim()
+            .split('\n')
+            .map(|game| {
+                let hands: Vec<&str> = game.split(' ').into_iter().map(|x| x.trim()).collect();
+                match_points_B(hands[0], hands[1])
+            })
+            .sum();
         points.to_string()
     }
 }
@@ -81,4 +89,3 @@ fn match_points_B(opponent: &str, played: &str) -> i32 {
         _ => 0,
     }
 }
-
