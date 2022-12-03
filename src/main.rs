@@ -1,6 +1,7 @@
 #![allow(non_snake_case, unused_imports)]
 mod days;
-use std::time::Instant;
+use colored::{ColoredString, Colorize};
+use std::time::{Duration, Instant};
 
 ///Type of input file to read
 use days::*;
@@ -13,13 +14,29 @@ fn main() {
     // let it = InputType::Test;
     let it = InputType::Real;
 
-    let day = Day2::new();
+    let day = Day3::new();
 
     let t = Instant::now();
     let ansA = day.A(&it);
-    println!("ansA: {0:?}\n time: {1:?}", ansA, t.elapsed());
+    printansA(&ansA, t.elapsed());
 
     let t = Instant::now();
     let ansB = day.B(&it);
-    println!("ansB: {0:?}\n time: {1:?}", ansB, t.elapsed());
+    printansB(&ansB, t.elapsed());
+}
+
+fn printansA(ansA: &String, elapsed: Duration) {
+    println!(
+        "ansA: {0}\t time: {1}",
+        ansA.bold().green(),
+        format!("{:?}", elapsed).italic().yellow()
+    )
+}
+
+fn printansB(ansB: &String, elapsed: Duration) {
+    println!(
+        "ansB: {0}\t time: {1}",
+        ansB.bold().purple(),
+        format!("{:?}", elapsed).italic().yellow()
+    )
 }
