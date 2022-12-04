@@ -1,5 +1,5 @@
 use std::path::PathBuf;
-
+use colored::{ColoredString, Colorize};
 use super::*;
 
 pub struct Day4 {}
@@ -21,6 +21,9 @@ impl AdventDay for Day4 {
     fn A(&self, it: &InputType) -> String {
         let input = std::fs::read_to_string(Self::get_path(it))
             .expect("Reading input failed, file doesn't exist most likely");
+        if input.len() < 3 { //arbitrary small value
+            println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
+        }
 
         let tot_pairs = input.trim().split('\n').fold(0_u32, |n_pairs, line| {
             //line = a-b,c-d
