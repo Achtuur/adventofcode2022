@@ -79,7 +79,7 @@ fn read_init_state(input: &str) -> Vec<VecDeque<char>> {
     input.split('\n').fold(Vec::<VecDeque<char>>::new(), |mut queue, line| {
         let mut idx = 0;
 
-        format!("{} ", line).chars().collect::<Vec<char>>().iter().tuples().for_each(|(open, cargo, close, space)| {
+        format!("{} ", line).chars().collect::<Vec<char>>().iter().tuples().for_each(|(_open, cargo, _close, _space)| {
             if queue.len() <= idx  {
                 queue.push(VecDeque::<char>::new())
             }
