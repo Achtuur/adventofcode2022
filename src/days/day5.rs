@@ -75,7 +75,6 @@ impl AdventDay for Day5 {
 }
 
 fn read_init_state(input: &str) -> Vec<VecDeque<char>> {
-    let letter_reg = Regex::new(r"[A-Z]").unwrap();
     input.split('\n').fold(Vec::<VecDeque<char>>::new(), |mut queue, line| {
         let mut idx = 0;
 
@@ -83,7 +82,7 @@ fn read_init_state(input: &str) -> Vec<VecDeque<char>> {
             if queue.len() <= idx  {
                 queue.push(VecDeque::<char>::new())
             }
-            if letter_reg.is_match(&cargo.to_string()) {
+            if !cargo.is_whitespace() {
                 queue[idx].push_front(*cargo);
             }
             idx += 1;
