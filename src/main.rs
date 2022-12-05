@@ -11,6 +11,7 @@ use day2::Day2;
 use day3::Day3;
 use day4::Day4;
 use day5::Day5;
+use day6::Day6;
 
 fn main() {
     // let it = InputType::Test;
