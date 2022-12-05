@@ -27,12 +27,12 @@ impl AdventDay for Day4 {
         }
 
         let pairs = input.trim().split('\n')
-        .flat_map(|line| line.trim().split(',')) //[a-b, c-d]
-        .flat_map(|elf| elf.split('-')) //[a, b, c, d] (as strings)
-        .map(|i| i.parse::<i32>().unwrap())
-        .tuples()
-        .filter(|(a, b, c, d)| a <= c && b >= d || c <= a && d >= b)
-        .count();
+            .flat_map(|line| line.trim().split(',')) //[a-b, c-d]
+            .flat_map(|elf| elf.split('-')) //[a, b, c, d] (as strings)
+            .map(|i| i.parse::<i32>().unwrap())
+            .tuples()
+            .filter(|(a, b, c, d)| a <= c && b >= d || c <= a && d >= b)
+            .count();
 
         pairs.to_string()
     }
