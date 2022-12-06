@@ -1,4 +1,4 @@
-use std::path::PathBuf;
+use std::{path::PathBuf, collections::{VecDeque, HashMap}};
 use colored::{ColoredString, Colorize};
 use super::*;
 
@@ -24,7 +24,30 @@ impl AdventDay for Day6 {
         if input.len() < 3 { //arbitrary small value
             println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
         }
-        todo!();
+
+        let mut v: VecDeque<char> = VecDeque::new();
+        let code_idx: usize = input.trim().chars().enumerate().find_map(|(i, c)| {
+            if v.len() < 4 {
+                v.push_front(c);
+                return None;
+            }
+
+            v.push_front(c); //add new char
+            v.pop_back(); //remove oldest char
+
+            let mut h = HashMap::<&char, char>::with_capacity(4);
+
+            v.iter().for_each(|v_c| {h.insert(v_c, 'a');});
+
+            if h.keys().count() == 4 {
+                return Some(i + 1) //+1 since aoc counts first element as 1
+            }
+
+            None
+
+        }).unwrap();
+
+        code_idx.to_string()
     }
 
     fn B(&self, it: &InputType) -> String {
@@ -32,6 +55,29 @@ impl AdventDay for Day6 {
         if input.len() < 3 { //arbitrary small value
             println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
         }
-        todo!();
+
+        let mut v: VecDeque<char> = VecDeque::new();
+        let code_idx: usize = input.trim().chars().enumerate().find_map(|(i, c)| {
+            if v.len() < 14 {
+                v.push_front(c);
+                return None;
+            }
+
+            v.push_front(c); //add new char
+            v.pop_back(); //remove oldest char
+
+            let mut h = HashMap::<&char, char>::with_capacity(14);
+
+            v.iter().for_each(|v_c| {h.insert(v_c, 'a');});
+
+            if h.keys().count() == 14 {
+                return Some(i + 1) //+1 since aoc counts first element as 1
+            }
+
+            None
+
+        }).unwrap();
+
+        code_idx.to_string()
     }
 }

@@ -17,7 +17,7 @@ fn main() {
     // let it = InputType::Test;
     let it = InputType::Real;
 
-    let day = Day5::new();
+    let day = Day6::new();
 
     let t = Instant::now();
     let ansA = day.A(&it);
