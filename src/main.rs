@@ -15,8 +15,8 @@ use day6::Day6;
 use day7::Day7;
 
 fn main() {
-    let it = InputType::Test;
-    // let it = InputType::Real;
+    // let it = InputType::Test;
+    let it = InputType::Real;
 
     let day = Day7::new();
 

@@ -1,0 +1,2229 @@
+s: 92978
+s: 955
+s: 22963
+s: 60566
+s: 99044
+s: 80072
+s: 82485
+s: 82485
+s: 32343
+s: 55058
+s: 18509
+s: 8326
+s: 8326
+s: 25082
+s: 56794
+s: 14981
+s: 283
+s: 63263
+s: 88980
+s: 88980
+s: 93470
+s: 42813
+s: 1238
+s: 44239
+s: 3286
+s: 98558
+dir: Directory {
+    name: "/",
+    children: [
+        Directory {
+            name: "plws",
+            children: [
+                Directory {
+                    name: "ffpzc",
+                    children: [],
+                    files: [
+                        (
+                            "dzdfc.vqq",
+                            48459,
+                        ),
+                        (
+                            "jql.jzl",
+                            143107,
+                        ),
+                        (
+                            "mmnvqn.hqb",
+                            208330,
+                        ),
+                        (
+                            "svjvhflz",
+                            290122,
+                        ),
+                        (
+                            "wjlmgq",
+                            218008,
+                        ),
+                    ],
+                    size: 908026,
+                },
+                Directory {
+                    name: "frcmjzts",
+                    children: [
+                        Directory {
+                            name: "bsltmjz",
+                            children: [],
+                            files: [
+                                (
+                                    "dzdfc.vqq",
+                                    34237,
+                                ),
+                                (
+                                    "mdgdhqgw",
+                                    58741,
+                                ),
+                            ],
+                            size: 92978,
+                        },
+                        Directory {
+                            name: "jfzgrbm",
+                            children: [],
+                            files: [
+                                (
+                                    "fcmpng",
+                                    132811,
+                                ),
+                                (
+                                    "lgt.swt",
+                                    103661,
+                                ),
+                                (
+                                    "vqgsglwq",
+                                    173031,
+                                ),
+                                (
+                                    "wprjfg.zbr",
+                                    29134,
+                                ),
+                            ],
+                            size: 438637,
+                        },
+                    ],
+                    files: [],
+                    size: 531615,
+                },
+                Directory {
+                    name: "phqcg",
+                    children: [],
+                    files: [
+                        (
+                            "jgfs.zjw",
+                            955,
+                        ),
+                    ],
+                    size: 955,
+                },
+            ],
+            files: [
+                (
+                    "nbvnzg",
+                    92461,
+                ),
+                (
+                    "vqgsglwq",
+                    21621,
+                ),
+            ],
+            size: 1554678,
+        },
+        Directory {
+            name: "pwlbgbz",
+            children: [
+                Directory {
+                    name: "gbg",
+                    children: [
+                        Directory {
+                            name: "wgq",
+                            children: [],
+                            files: [
+                                (
+                                    "fcsjl.fcm",
+                                    22963,
+                                ),
+                            ],
+                            size: 22963,
+                        },
+                    ],
+                    files: [
+                        (
+                            "fcsjl.bzm",
+                            287003,
+                        ),
+                    ],
+                    size: 309966,
+                },
+                Directory {
+                    name: "mjzhcwrd",
+                    children: [],
+                    files: [
+                        (
+                            "clfnpmbq.zmb",
+                            228632,
+                        ),
+                        (
+                            "dzdfc.vqq",
+                            28276,
+                        ),
+                        (
+                            "tdbg.wgn",
+                            2982,
+                        ),
+                    ],
+                    size: 259890,
+                },
+                Directory {
+                    name: "njcscpj",
+                    children: [
+                        Directory {
+                            name: "dqzgqgv",
+                            children: [
+                                Directory {
+                                    name: "snjntth",
+                                    children: [
+                                        Directory {
+                                            name: "vrfgfds",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "jlscz",
+                                                    155233,
+                                                ),
+                                            ],
+                                            size: 155233,
+                                        },
+                                    ],
+                                    files: [
+                                        (
+                                            "ffpzc",
+                                            51918,
+                                        ),
+                                    ],
+                                    size: 207151,
+                                },
+                                Directory {
+                                    name: "sphbzn",
+                                    children: [
+                                        Directory {
+                                            name: "qbzwrrw",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "fcsjl.tqj",
+                                                    278531,
+                                                ),
+                                                (
+                                                    "snjntth.gpd",
+                                                    211591,
+                                                ),
+                                            ],
+                                            size: 490122,
+                                        },
+                                        Directory {
+                                            name: "qwpzn",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "vqgsglwq",
+                                                    174183,
+                                                ),
+                                            ],
+                                            size: 174183,
+                                        },
+                                    ],
+                                    files: [],
+                                    size: 664305,
+                                },
+                            ],
+                            files: [
+                                (
+                                    "dzdfc.vqq",
+                                    70309,
+                                ),
+                                (
+                                    "fcsjl",
+                                    56139,
+                                ),
+                                (
+                                    "sgwz.cdz",
+                                    142095,
+                                ),
+                                (
+                                    "wjlmgq",
+                                    284618,
+                                ),
+                            ],
+                            size: 1424617,
+                        },
+                    ],
+                    files: [
+                        (
+                            "ffpzc",
+                            275186,
+                        ),
+                        (
+                            "gjnflc.plq",
+                            192491,
+                        ),
+                    ],
+                    size: 1892294,
+                },
+                Directory {
+                    name: "sphbzn",
+                    children: [
+                        Directory {
+                            name: "bsvh",
+                            children: [],
+                            files: [
+                                (
+                                    "wjlmgq",
+                                    130814,
+                                ),
+                            ],
+                            size: 130814,
+                        },
+                        Directory {
+                            name: "fvzcs",
+                            children: [
+                                Directory {
+                                    name: "cgmv",
+                                    children: [
+                                        Directory {
+                                            name: "lmqcbbm",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "bdmbvgp",
+                                                    229898,
+                                                ),
+                                                (
+                                                    "ffpzc.stm",
+                                                    25529,
+                                                ),
+                                                (
+                                                    "lnpjzvg.qlj",
+                                                    16871,
+                                                ),
+                                            ],
+                                            size: 272298,
+                                        },
+                                        Directory {
+                                            name: "rstcqsmd",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "zrbbbwng.smf",
+                                                    289038,
+                                                ),
+                                            ],
+                                            size: 289038,
+                                        },
+                                    ],
+                                    files: [
+                                        (
+                                            "dzdfc.vqq",
+                                            46843,
+                                        ),
+                                        (
+                                            "snjntth",
+                                            215261,
+                                        ),
+                                    ],
+                                    size: 823440,
+                                },
+                                Directory {
+                                    name: "ggzwljr",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "bcthn",
+                                            198200,
+                                        ),
+                                    ],
+                                    size: 198200,
+                                },
+                                Directory {
+                                    name: "snjntth",
+                                    children: [
+                                        Directory {
+                                            name: "pggcwb",
+                                            children: [
+                                                Directory {
+                                                    name: "pdjg",
+                                                    children: [],
+                                                    files: [
+                                                        (
+                                                            "gvhlrcf",
+                                                            260644,
+                                                        ),
+                                                        (
+                                                            "wpls.pbd",
+                                                            209906,
+                                                        ),
+                                                    ],
+                                                    size: 470550,
+                                                },
+                                                Directory {
+                                                    name: "wjhrtg",
+                                                    children: [],
+                                                    files: [
+                                                        (
+                                                            "dljf.zrq",
+                                                            148640,
+                                                        ),
+                                                        (
+                                                            "dzdfc.vqq",
+                                                            172168,
+                                                        ),
+                                                        (
+                                                            "hjdphcfm",
+                                                            196203,
+                                                        ),
+                                                        (
+                                                            "sgwz.cdz",
+                                                            247620,
+                                                        ),
+                                                    ],
+                                                    size: 764631,
+                                                },
+                                            ],
+                                            files: [
+                                                (
+                                                    "fqztwvnv.lvv",
+                                                    154272,
+                                                ),
+                                                (
+                                                    "vqgsglwq",
+                                                    62393,
+                                                ),
+                                            ],
+                                            size: 1451846,
+                                        },
+                                        Directory {
+                                            name: "snjntth",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "ndlshlmj.cjq",
+                                                    37467,
+                                                ),
+                                                (
+                                                    "snjntth.nsf",
+                                                    257404,
+                                                ),
+                                            ],
+                                            size: 294871,
+                                        },
+                                    ],
+                                    files: [
+                                        (
+                                            "fwp.phf",
+                                            191672,
+                                        ),
+                                        (
+                                            "hzs.zpg",
+                                            68229,
+                                        ),
+                                        (
+                                            "qbv.bwj",
+                                            222426,
+                                        ),
+                                        (
+                                            "vmqcm",
+                                            155354,
+                                        ),
+                                    ],
+                                    size: 2384398,
+                                },
+                                Directory {
+                                    name: "sphbzn",
+                                    children: [
+                                        Directory {
+                                            name: "bsltmjz",
+                                            children: [
+                                                Directory {
+                                                    name: "bsqqdr",
+                                                    children: [],
+                                                    files: [
+                                                        (
+                                                            "wcqt",
+                                                            117496,
+                                                        ),
+                                                    ],
+                                                    size: 117496,
+                                                },
+                                                Directory {
+                                                    name: "ffpzc",
+                                                    children: [],
+                                                    files: [
+                                                        (
+                                                            "mmnvqn.hqb",
+                                                            280224,
+                                                        ),
+                                                        (
+                                                            "vrr",
+                                                            105346,
+                                                        ),
+                                                    ],
+                                                    size: 385570,
+                                                },
+                                                Directory {
+                                                    name: "frsmrd",
+                                                    children: [],
+                                                    files: [
+                                                        (
+                                                            "sphbzn.shz",
+                                                            111509,
+                                                        ),
+                                                    ],
+                                                    size: 111509,
+                                                },
+                                            ],
+                                            files: [
+                                                (
+                                                    "fcsjl.gfm",
+                                                    266007,
+                                                ),
+                                                (
+                                                    "nthnhzwf",
+                                                    72122,
+                                                ),
+                                                (
+                                                    "wjlmgq",
+                                                    286705,
+                                                ),
+                                            ],
+                                            size: 1239409,
+                                        },
+                                        Directory {
+                                            name: "snjntth",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "mplj",
+                                                    177491,
+                                                ),
+                                                (
+                                                    "pvbz.jwn",
+                                                    9029,
+                                                ),
+                                                (
+                                                    "snjntth.zrv",
+                                                    92891,
+                                                ),
+                                                (
+                                                    "vnnnw.gql",
+                                                    203356,
+                                                ),
+                                                (
+                                                    "vqgsglwq",
+                                                    134728,
+                                                ),
+                                            ],
+                                            size: 617495,
+                                        },
+                                    ],
+                                    files: [
+                                        (
+                                            "bfdv.lwv",
+                                            64082,
+                                        ),
+                                        (
+                                            "dzdfc.vqq",
+                                            58942,
+                                        ),
+                                    ],
+                                    size: 1979928,
+                                },
+                            ],
+                            files: [
+                                (
+                                    "qvzghdpw.lms",
+                                    298241,
+                                ),
+                            ],
+                            size: 5684207,
+                        },
+                        Directory {
+                            name: "ndw",
+                            children: [],
+                            files: [
+                                (
+                                    "bht.rpj",
+                                    241303,
+                                ),
+                                (
+                                    "vqgsglwq",
+                                    173068,
+                                ),
+                            ],
+                            size: 414371,
+                        },
+                        Directory {
+                            name: "nlml",
+                            children: [],
+                            files: [
+                                (
+                                    "hzglfpvq.ftt",
+                                    228982,
+                                ),
+                                (
+                                    "sgwz.cdz",
+                                    114981,
+                                ),
+                            ],
+                            size: 343963,
+                        },
+                        Directory {
+                            name: "pcbt",
+                            children: [
+                                Directory {
+                                    name: "bsltmjz",
+                                    children: [
+                                        Directory {
+                                            name: "ffpzc",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "snjntth.dss",
+                                                    179645,
+                                                ),
+                                            ],
+                                            size: 179645,
+                                        },
+                                        Directory {
+                                            name: "flrpwfs",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "wvjq.gmm",
+                                                    60566,
+                                                ),
+                                            ],
+                                            size: 60566,
+                                        },
+                                    ],
+                                    files: [
+                                        (
+                                            "bsltmjz.spj",
+                                            177750,
+                                        ),
+                                        (
+                                            "mtmdtcpv.cfj",
+                                            138824,
+                                        ),
+                                        (
+                                            "wzqwczj.qwn",
+                                            165770,
+                                        ),
+                                    ],
+                                    size: 722555,
+                                },
+                                Directory {
+                                    name: "ffpzc",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "qzhhtmd.bhw",
+                                            97847,
+                                        ),
+                                        (
+                                            "vqgsglwq",
+                                            1197,
+                                        ),
+                                    ],
+                                    size: 99044,
+                                },
+                                Directory {
+                                    name: "fjsjwfg",
+                                    children: [
+                                        Directory {
+                                            name: "jqpb",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "mmnvqn.hqb",
+                                                    253403,
+                                                ),
+                                                (
+                                                    "rvq.mrc",
+                                                    108325,
+                                                ),
+                                            ],
+                                            size: 361728,
+                                        },
+                                        Directory {
+                                            name: "jscbg",
+                                            children: [
+                                                Directory {
+                                                    name: "dtm",
+                                                    children: [],
+                                                    files: [
+                                                        (
+                                                            "gzqnb",
+                                                            80072,
+                                                        ),
+                                                    ],
+                                                    size: 80072,
+                                                },
+                                                Directory {
+                                                    name: "gsdnz",
+                                                    children: [
+                                                        Directory {
+                                                            name: "dsqzjs",
+                                                            children: [],
+                                                            files: [
+                                                                (
+                                                                    "jqrlsf.gzs",
+                                                                    2621,
+                                                                ),
+                                                                (
+                                                                    "snjntth",
+                                                                    164844,
+                                                                ),
+                                                            ],
+                                                            size: 167465,
+                                                        },
+                                                    ],
+                                                    files: [
+                                                        (
+                                                            "sgwz.cdz",
+                                                            297895,
+                                                        ),
+                                                        (
+                                                            "vqgsglwq",
+                                                            129983,
+                                                        ),
+                                                    ],
+                                                    size: 595343,
+                                                },
+                                            ],
+                                            files: [
+                                                (
+                                                    "prh",
+                                                    208269,
+                                                ),
+                                                (
+                                                    "qdzljgh",
+                                                    25977,
+                                                ),
+                                                (
+                                                    "vmnq.mth",
+                                                    169262,
+                                                ),
+                                            ],
+                                            size: 1078923,
+                                        },
+                                        Directory {
+                                            name: "snjntth",
+                                            children: [
+                                                Directory {
+                                                    name: "ffpzc",
+                                                    children: [
+                                                        Directory {
+                                                            name: "lmn",
+                                                            children: [],
+                                                            files: [
+                                                                (
+                                                                    "bsltmjz",
+                                                                    46401,
+                                                                ),
+                                                                (
+                                                                    "shrnqhvq",
+                                                                    96888,
+                                                                ),
+                                                            ],
+                                                            size: 143289,
+                                                        },
+                                                    ],
+                                                    files: [
+                                                        (
+                                                            "tvlwn.vhh",
+                                                            12104,
+                                                        ),
+                                                    ],
+                                                    size: 155393,
+                                                },
+                                                Directory {
+                                                    name: "snjntth",
+                                                    children: [
+                                                        Directory {
+                                                            name: "snjntth",
+                                                            children: [
+                                                                Directory {
+                                                                    name: "ctj",
+                                                                    children: [],
+                                                                    files: [
+                                                                        (
+                                                                            "fcsjl.lfl",
+                                                                            82485,
+                                                                        ),
+                                                                    ],
+                                                                    size: 82485,
+                                                                },
+                                                            ],
+                                                            files: [],
+                                                            size: 82485,
+                                                        },
+                                                        Directory {
+                                                            name: "vlnfhbq",
+                                                            children: [],
+                                                            files: [
+                                                                (
+                                                                    "qvf",
+                                                                    250106,
+                                                                ),
+                                                            ],
+                                                            size: 250106,
+                                                        },
+                                                        Directory {
+                                                            name: "wpwl",
+                                                            children: [],
+                                                            files: [
+                                                                (
+                                                                    "cmsd.rlg",
+                                                                    153950,
+                                                                ),
+                                                            ],
+                                                            size: 153950,
+                                                        },
+                                                    ],
+                                                    files: [],
+                                                    size: 486541,
+                                                },
+                                            ],
+                                            files: [
+                                                (
+                                                    "cbhql",
+                                                    118553,
+                                                ),
+                                            ],
+                                            size: 760487,
+                                        },
+                                        Directory {
+                                            name: "sphbzn",
+                                            children: [
+                                                Directory {
+                                                    name: "glgq",
+                                                    children: [],
+                                                    files: [
+                                                        (
+                                                            "wjlmgq",
+                                                            285182,
+                                                        ),
+                                                    ],
+                                                    size: 285182,
+                                                },
+                                            ],
+                                            files: [],
+                                            size: 285182,
+                                        },
+                                    ],
+                                    files: [
+                                        (
+                                            "dnsdd.jgz",
+                                            152232,
+                                        ),
+                                        (
+                                            "gsb.wsh",
+                                            181301,
+                                        ),
+                                        (
+                                            "snjntth.vvg",
+                                            227677,
+                                        ),
+                                        (
+                                            "vqgsglwq",
+                                            75358,
+                                        ),
+                                        (
+                                            "wjlmgq",
+                                            2589,
+                                        ),
+                                    ],
+                                    size: 3125477,
+                                },
+                                Directory {
+                                    name: "fwm",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "ffpzc.qgb",
+                                            251865,
+                                        ),
+                                        (
+                                            "zvvpfqtp",
+                                            279522,
+                                        ),
+                                    ],
+                                    size: 531387,
+                                },
+                                Directory {
+                                    name: "jvwt",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "bsltmjz.nzp",
+                                            48990,
+                                        ),
+                                        (
+                                            "ffpzc",
+                                            219604,
+                                        ),
+                                        (
+                                            "mvmdfzr.lwb",
+                                            69573,
+                                        ),
+                                    ],
+                                    size: 338167,
+                                },
+                                Directory {
+                                    name: "vwpqzdwh",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "pvcch",
+                                            267581,
+                                        ),
+                                    ],
+                                    size: 267581,
+                                },
+                            ],
+                            files: [
+                                (
+                                    "tmr.jdc",
+                                    227943,
+                                ),
+                                (
+                                    "wjlmgq",
+                                    31258,
+                                ),
+                            ],
+                            size: 5343412,
+                        },
+                    ],
+                    files: [
+                        (
+                            "bsltmjz.fqz",
+                            185471,
+                        ),
+                        (
+                            "zhcmrpvt",
+                            286260,
+                        ),
+                    ],
+                    size: 12388498,
+                },
+                Directory {
+                    name: "tbgjpphc",
+                    children: [
+                        Directory {
+                            name: "fdbwbrpp",
+                            children: [
+                                Directory {
+                                    name: "ffpzc",
+                                    children: [
+                                        Directory {
+                                            name: "jhnzrdvb",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "ffpzc.sgw",
+                                                    217775,
+                                                ),
+                                            ],
+                                            size: 217775,
+                                        },
+                                    ],
+                                    files: [],
+                                    size: 217775,
+                                },
+                                Directory {
+                                    name: "qbrth",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "lpbwgfjv.vcg",
+                                            183969,
+                                        ),
+                                        (
+                                            "wjlmgq",
+                                            47333,
+                                        ),
+                                    ],
+                                    size: 231302,
+                                },
+                                Directory {
+                                    name: "slpt",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "tqhtj.jwz",
+                                            32343,
+                                        ),
+                                    ],
+                                    size: 32343,
+                                },
+                                Directory {
+                                    name: "znmj",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "mmnvqn.hqb",
+                                            55058,
+                                        ),
+                                    ],
+                                    size: 55058,
+                                },
+                            ],
+                            files: [
+                                (
+                                    "qprp",
+                                    51164,
+                                ),
+                                (
+                                    "sphbzn",
+                                    117026,
+                                ),
+                                (
+                                    "vqgsglwq",
+                                    295685,
+                                ),
+                            ],
+                            size: 1000353,
+                        },
+                        Directory {
+                            name: "gjzwh",
+                            children: [
+                                Directory {
+                                    name: "dvcbcd",
+                                    children: [
+                                        Directory {
+                                            name: "jlwtvf",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "sphbzn.dvj",
+                                                    219985,
+                                                ),
+                                            ],
+                                            size: 219985,
+                                        },
+                                        Directory {
+                                            name: "jnjvshs",
+                                            children: [
+                                                Directory {
+                                                    name: "bsltmjz",
+                                                    children: [],
+                                                    files: [
+                                                        (
+                                                            "qgdqj",
+                                                            152972,
+                                                        ),
+                                                    ],
+                                                    size: 152972,
+                                                },
+                                                Directory {
+                                                    name: "nrpm",
+                                                    children: [],
+                                                    files: [
+                                                        (
+                                                            "wjlmgq",
+                                                            18509,
+                                                        ),
+                                                    ],
+                                                    size: 18509,
+                                                },
+                                            ],
+                                            files: [],
+                                            size: 171481,
+                                        },
+                                    ],
+                                    files: [
+                                        (
+                                            "dzdfc.vqq",
+                                            187837,
+                                        ),
+                                        (
+                                            "nrf.fqd",
+                                            164053,
+                                        ),
+                                        (
+                                            "tlp.jmt",
+                                            5665,
+                                        ),
+                                        (
+                                            "wjlmgq",
+                                            13801,
+                                        ),
+                                    ],
+                                    size: 762822,
+                                },
+                                Directory {
+                                    name: "fsgz",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "mmnvqn.hqb",
+                                            224576,
+                                        ),
+                                    ],
+                                    size: 224576,
+                                },
+                                Directory {
+                                    name: "hfrrqq",
+                                    children: [
+                                        Directory {
+                                            name: "bwgsnfvb",
+                                            children: [
+                                                Directory {
+                                                    name: "wstmzfml",
+                                                    children: [],
+                                                    files: [
+                                                        (
+                                                            "bnvhbvvc.nrt",
+                                                            158447,
+                                                        ),
+                                                        (
+                                                            "jclclgd",
+                                                            59889,
+                                                        ),
+                                                    ],
+                                                    size: 218336,
+                                                },
+                                            ],
+                                            files: [
+                                                (
+                                                    "dzdfc.vqq",
+                                                    29735,
+                                                ),
+                                            ],
+                                            size: 248071,
+                                        },
+                                        Directory {
+                                            name: "fcsjl",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "ffpzc.szw",
+                                                    138297,
+                                                ),
+                                            ],
+                                            size: 138297,
+                                        },
+                                        Directory {
+                                            name: "sphbzn",
+                                            children: [
+                                                Directory {
+                                                    name: "wqdths",
+                                                    children: [],
+                                                    files: [
+                                                        (
+                                                            "cgvtw.jpz",
+                                                            8326,
+                                                        ),
+                                                    ],
+                                                    size: 8326,
+                                                },
+                                            ],
+                                            files: [],
+                                            size: 8326,
+                                        },
+                                    ],
+                                    files: [
+                                        (
+                                            "ffpzc.gvm",
+                                            294608,
+                                        ),
+                                        (
+                                            "qjcgtw",
+                                            136880,
+                                        ),
+                                    ],
+                                    size: 826182,
+                                },
+                                Directory {
+                                    name: "rqqmldw",
+                                    children: [
+                                        Directory {
+                                            name: "qpts",
+                                            children: [
+                                                Directory {
+                                                    name: "fcsjl",
+                                                    children: [],
+                                                    files: [
+                                                        (
+                                                            "mmnvqn.hqb",
+                                                            25082,
+                                                        ),
+                                                    ],
+                                                    size: 25082,
+                                                },
+                                                Directory {
+                                                    name: "wnmqqspz",
+                                                    children: [],
+                                                    files: [
+                                                        (
+                                                            "sgwz.cdz",
+                                                            165529,
+                                                        ),
+                                                    ],
+                                                    size: 165529,
+                                                },
+                                            ],
+                                            files: [
+                                                (
+                                                    "bsltmjz.frp",
+                                                    60860,
+                                                ),
+                                                (
+                                                    "sgwz.cdz",
+                                                    94904,
+                                                ),
+                                            ],
+                                            size: 346375,
+                                        },
+                                    ],
+                                    files: [
+                                        (
+                                            "dzdfc.vqq",
+                                            226757,
+                                        ),
+                                        (
+                                            "mwb.btc",
+                                            115055,
+                                        ),
+                                        (
+                                            "sgwz.cdz",
+                                            298524,
+                                        ),
+                                    ],
+                                    size: 986711,
+                                },
+                                Directory {
+                                    name: "ssqbqqp",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "pvrgm",
+                                            192477,
+                                        ),
+                                    ],
+                                    size: 192477,
+                                },
+                                Directory {
+                                    name: "zsztqrc",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "lht.htn",
+                                            254053,
+                                        ),
+                                    ],
+                                    size: 254053,
+                                },
+                            ],
+                            files: [
+                                (
+                                    "dzdfc.vqq",
+                                    202530,
+                                ),
+                                (
+                                    "jlzn.qsn",
+                                    54897,
+                                ),
+                                (
+                                    "ldzqsbb.jzl",
+                                    16097,
+                                ),
+                                (
+                                    "pswccrd",
+                                    225078,
+                                ),
+                                (
+                                    "rzrdhbp.vld",
+                                    292464,
+                                ),
+                            ],
+                            size: 4037887,
+                        },
+                        Directory {
+                            name: "hjvrtjt",
+                            children: [],
+                            files: [
+                                (
+                                    "fwps",
+                                    189942,
+                                ),
+                            ],
+                            size: 189942,
+                        },
+                        Directory {
+                            name: "rhzczj",
+                            children: [
+                                Directory {
+                                    name: "ffjz",
+                                    children: [
+                                        Directory {
+                                            name: "grsvhwm",
+                                            children: [
+                                                Directory {
+                                                    name: "snjntth",
+                                                    children: [
+                                                        Directory {
+                                                            name: "dtbgb",
+                                                            children: [],
+                                                            files: [
+                                                                (
+                                                                    "vdflm.lmq",
+                                                                    150245,
+                                                                ),
+                                                            ],
+                                                            size: 150245,
+                                                        },
+                                                    ],
+                                                    files: [],
+                                                    size: 150245,
+                                                },
+                                            ],
+                                            files: [
+                                                (
+                                                    "fwj.rdv",
+                                                    50231,
+                                                ),
+                                            ],
+                                            size: 200476,
+                                        },
+                                    ],
+                                    files: [],
+                                    size: 200476,
+                                },
+                                Directory {
+                                    name: "qdgjzcz",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "dzdfc.vqq",
+                                            222389,
+                                        ),
+                                    ],
+                                    size: 222389,
+                                },
+                                Directory {
+                                    name: "snjntth",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "mmnvqn.hqb",
+                                            56794,
+                                        ),
+                                    ],
+                                    size: 56794,
+                                },
+                            ],
+                            files: [
+                                (
+                                    "bmtfr",
+                                    36502,
+                                ),
+                                (
+                                    "nctfhmzm.vsz",
+                                    35148,
+                                ),
+                                (
+                                    "rwql",
+                                    208196,
+                                ),
+                                (
+                                    "sgwz.cdz",
+                                    79863,
+                                ),
+                            ],
+                            size: 839368,
+                        },
+                        Directory {
+                            name: "wlzhr",
+                            children: [],
+                            files: [
+                                (
+                                    "bsltmjz",
+                                    116628,
+                                ),
+                                (
+                                    "jqpbsgnr.fgb",
+                                    60122,
+                                ),
+                                (
+                                    "lfss",
+                                    252605,
+                                ),
+                                (
+                                    "qwjdl.vhr",
+                                    300065,
+                                ),
+                            ],
+                            size: 729420,
+                        },
+                    ],
+                    files: [
+                        (
+                            "dstpcgr.tfq",
+                            255571,
+                        ),
+                        (
+                            "sgwz.cdz",
+                            292888,
+                        ),
+                        (
+                            "wnfzrqgz.dtn",
+                            149395,
+                        ),
+                    ],
+                    size: 7494824,
+                },
+            ],
+            files: [
+                (
+                    "tvrfpczc.djm",
+                    55938,
+                ),
+                (
+                    "twd",
+                    4840,
+                ),
+            ],
+            size: 22406250,
+        },
+        Directory {
+            name: "pwtpltr",
+            children: [
+                Directory {
+                    name: "dplsvrhl",
+                    children: [
+                        Directory {
+                            name: "ffpzc",
+                            children: [
+                                Directory {
+                                    name: "qmfwpjhl",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "dzdfc.vqq",
+                                            300362,
+                                        ),
+                                    ],
+                                    size: 300362,
+                                },
+                                Directory {
+                                    name: "rsrb",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "dzdfc.vqq",
+                                            252983,
+                                        ),
+                                        (
+                                            "ltssrgqb.zvj",
+                                            107744,
+                                        ),
+                                        (
+                                            "rhglgcwr.wpw",
+                                            214895,
+                                        ),
+                                        (
+                                            "sgwz.cdz",
+                                            249727,
+                                        ),
+                                    ],
+                                    size: 825349,
+                                },
+                                Directory {
+                                    name: "wgt",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "dzdfc.vqq",
+                                            141984,
+                                        ),
+                                        (
+                                            "mmnvqn.hqb",
+                                            194686,
+                                        ),
+                                        (
+                                            "pgr",
+                                            258023,
+                                        ),
+                                    ],
+                                    size: 594693,
+                                },
+                            ],
+                            files: [
+                                (
+                                    "bsltmjz",
+                                    5499,
+                                ),
+                            ],
+                            size: 1725903,
+                        },
+                        Directory {
+                            name: "mnhntjz",
+                            children: [
+                                Directory {
+                                    name: "bdvght",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "vpsvjdq.wsn",
+                                            243166,
+                                        ),
+                                    ],
+                                    size: 243166,
+                                },
+                                Directory {
+                                    name: "jprwchh",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "bmpc.bjb",
+                                            178943,
+                                        ),
+                                    ],
+                                    size: 178943,
+                                },
+                                Directory {
+                                    name: "snjntth",
+                                    children: [
+                                        Directory {
+                                            name: "nlbm",
+                                            children: [
+                                                Directory {
+                                                    name: "sphbzn",
+                                                    children: [],
+                                                    files: [
+                                                        (
+                                                            "prrfhff.pbp",
+                                                            214563,
+                                                        ),
+                                                    ],
+                                                    size: 214563,
+                                                },
+                                            ],
+                                            files: [
+                                                (
+                                                    "fcsjl.rcc",
+                                                    33050,
+                                                ),
+                                                (
+                                                    "wjlmgq",
+                                                    17446,
+                                                ),
+                                            ],
+                                            size: 265059,
+                                        },
+                                        Directory {
+                                            name: "zjmjntff",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "sgwz.cdz",
+                                                    82134,
+                                                ),
+                                                (
+                                                    "vrtlgdq.crp",
+                                                    52203,
+                                                ),
+                                            ],
+                                            size: 134337,
+                                        },
+                                    ],
+                                    files: [],
+                                    size: 399396,
+                                },
+                            ],
+                            files: [],
+                            size: 821505,
+                        },
+                    ],
+                    files: [
+                        (
+                            "fcsjl",
+                            272101,
+                        ),
+                        (
+                            "mmnvqn.hqb",
+                            58852,
+                        ),
+                        (
+                            "sgwz.cdz",
+                            91899,
+                        ),
+                        (
+                            "snjntth.btv",
+                            228077,
+                        ),
+                    ],
+                    size: 3198337,
+                },
+                Directory {
+                    name: "jbvdb",
+                    children: [
+                        Directory {
+                            name: "wmtjh",
+                            children: [
+                                Directory {
+                                    name: "ggvwn",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "spqvmf.sdh",
+                                            192285,
+                                        ),
+                                    ],
+                                    size: 192285,
+                                },
+                            ],
+                            files: [],
+                            size: 192285,
+                        },
+                    ],
+                    files: [],
+                    size: 192285,
+                },
+                Directory {
+                    name: "jst",
+                    children: [
+                        Directory {
+                            name: "bsltmjz",
+                            children: [],
+                            files: [
+                                (
+                                    "snjntth.gpv",
+                                    215705,
+                                ),
+                                (
+                                    "wjlmgq",
+                                    213665,
+                                ),
+                            ],
+                            size: 429370,
+                        },
+                        Directory {
+                            name: "gncztvtb",
+                            children: [],
+                            files: [
+                                (
+                                    "vqgsglwq",
+                                    229298,
+                                ),
+                            ],
+                            size: 229298,
+                        },
+                        Directory {
+                            name: "jsqjcqnt",
+                            children: [
+                                Directory {
+                                    name: "bsltmjz",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "pqzffzjc",
+                                            14981,
+                                        ),
+                                    ],
+                                    size: 14981,
+                                },
+                                Directory {
+                                    name: "fcsjl",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "jwhczwbc",
+                                            140328,
+                                        ),
+                                    ],
+                                    size: 140328,
+                                },
+                                Directory {
+                                    name: "ffpzc",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "mmnvqn.hqb",
+                                            213650,
+                                        ),
+                                    ],
+                                    size: 213650,
+                                },
+                                Directory {
+                                    name: "sphbzn",
+                                    children: [
+                                        Directory {
+                                            name: "psmtphhq",
+                                            children: [
+                                                Directory {
+                                                    name: "ffpzc",
+                                                    children: [
+                                                        Directory {
+                                                            name: "gcnrp",
+                                                            children: [],
+                                                            files: [
+                                                                (
+                                                                    "vqnrgl.vwp",
+                                                                    283,
+                                                                ),
+                                                            ],
+                                                            size: 283,
+                                                        },
+                                                        Directory {
+                                                            name: "llnztjf",
+                                                            children: [],
+                                                            files: [
+                                                                (
+                                                                    "tjhm.bwh",
+                                                                    63263,
+                                                                ),
+                                                            ],
+                                                            size: 63263,
+                                                        },
+                                                        Directory {
+                                                            name: "nbqs",
+                                                            children: [
+                                                                Directory {
+                                                                    name: "vssmq",
+                                                                    children: [],
+                                                                    files: [
+                                                                        (
+                                                                            "dzdfc.vqq",
+                                                                            88980,
+                                                                        ),
+                                                                    ],
+                                                                    size: 88980,
+                                                                },
+                                                            ],
+                                                            files: [],
+                                                            size: 88980,
+                                                        },
+                                                    ],
+                                                    files: [
+                                                        (
+                                                            "cfngvmd",
+                                                            49737,
+                                                        ),
+                                                        (
+                                                            "gmd.cwl",
+                                                            172799,
+                                                        ),
+                                                        (
+                                                            "rrqz",
+                                                            79661,
+                                                        ),
+                                                    ],
+                                                    size: 454723,
+                                                },
+                                            ],
+                                            files: [
+                                                (
+                                                    "tzgwd",
+                                                    123131,
+                                                ),
+                                            ],
+                                            size: 577854,
+                                        },
+                                        Directory {
+                                            name: "sphbzn",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "fcsjl.zrs",
+                                                    20140,
+                                                ),
+                                                (
+                                                    "snjntth",
+                                                    260579,
+                                                ),
+                                            ],
+                                            size: 280719,
+                                        },
+                                    ],
+                                    files: [],
+                                    size: 858573,
+                                },
+                            ],
+                            files: [
+                                (
+                                    "vqgsglwq",
+                                    70864,
+                                ),
+                            ],
+                            size: 1298396,
+                        },
+                        Directory {
+                            name: "tbqphzb",
+                            children: [],
+                            files: [
+                                (
+                                    "sgwz.cdz",
+                                    93470,
+                                ),
+                            ],
+                            size: 93470,
+                        },
+                        Directory {
+                            name: "vdcqgts",
+                            children: [
+                                Directory {
+                                    name: "ffpzc",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "qwwmw.nmt",
+                                            42813,
+                                        ),
+                                    ],
+                                    size: 42813,
+                                },
+                                Directory {
+                                    name: "gwhfgwf",
+                                    children: [
+                                        Directory {
+                                            name: "mjl",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "pgjb.tpq",
+                                                    13004,
+                                                ),
+                                                (
+                                                    "tms.fjz",
+                                                    195995,
+                                                ),
+                                            ],
+                                            size: 208999,
+                                        },
+                                    ],
+                                    files: [
+                                        (
+                                            "jvfv.mpm",
+                                            59918,
+                                        ),
+                                        (
+                                            "pcwl",
+                                            211039,
+                                        ),
+                                    ],
+                                    size: 479956,
+                                },
+                                Directory {
+                                    name: "nbjtqnng",
+                                    children: [
+                                        Directory {
+                                            name: "ldrsd",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "jvjm",
+                                                    107439,
+                                                ),
+                                            ],
+                                            size: 107439,
+                                        },
+                                    ],
+                                    files: [
+                                        (
+                                            "dzdfc.vqq",
+                                            107058,
+                                        ),
+                                        (
+                                            "vqgsglwq",
+                                            111631,
+                                        ),
+                                        (
+                                            "wbzmdljw.tjq",
+                                            104599,
+                                        ),
+                                        (
+                                            "wjlmgq",
+                                            155747,
+                                        ),
+                                    ],
+                                    size: 586474,
+                                },
+                                Directory {
+                                    name: "snjntth",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "fgrt.gng",
+                                            242680,
+                                        ),
+                                    ],
+                                    size: 242680,
+                                },
+                            ],
+                            files: [
+                                (
+                                    "dzdfc.vqq",
+                                    223564,
+                                ),
+                            ],
+                            size: 1575487,
+                        },
+                    ],
+                    files: [
+                        (
+                            "dzdfc.vqq",
+                            212740,
+                        ),
+                        (
+                            "jvs",
+                            286257,
+                        ),
+                        (
+                            "sdcsm.mbg",
+                            36654,
+                        ),
+                        (
+                            "sgwz.cdz",
+                            192040,
+                        ),
+                        (
+                            "wjlmgq",
+                            285843,
+                        ),
+                    ],
+                    size: 4639555,
+                },
+                Directory {
+                    name: "qhjv",
+                    children: [
+                        Directory {
+                            name: "bmnm",
+                            children: [],
+                            files: [
+                                (
+                                    "vqgsglwq",
+                                    1238,
+                                ),
+                            ],
+                            size: 1238,
+                        },
+                        Directory {
+                            name: "sjlbj",
+                            children: [],
+                            files: [
+                                (
+                                    "wzzbtmrz.gml",
+                                    44239,
+                                ),
+                            ],
+                            size: 44239,
+                        },
+                        Directory {
+                            name: "vqnrj",
+                            children: [],
+                            files: [
+                                (
+                                    "bsltmjz.qlc",
+                                    3286,
+                                ),
+                            ],
+                            size: 3286,
+                        },
+                    ],
+                    files: [
+                        (
+                            "hjjpdgn.hwl",
+                            68453,
+                        ),
+                    ],
+                    size: 117216,
+                },
+                Directory {
+                    name: "snjntth",
+                    children: [
+                        Directory {
+                            name: "snjntth",
+                            children: [
+                                Directory {
+                                    name: "snmrdfbt",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "bzrsds.lfg",
+                                            281025,
+                                        ),
+                                    ],
+                                    size: 281025,
+                                },
+                            ],
+                            files: [],
+                            size: 281025,
+                        },
+                        Directory {
+                            name: "tcnmbcgg",
+                            children: [
+                                Directory {
+                                    name: "qdrmpqgn",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "qmzgt.tnc",
+                                            165713,
+                                        ),
+                                    ],
+                                    size: 165713,
+                                },
+                                Directory {
+                                    name: "rzqd",
+                                    children: [
+                                        Directory {
+                                            name: "cwhnmlv",
+                                            children: [],
+                                            files: [
+                                                (
+                                                    "mmnvqn.hqb",
+                                                    287539,
+                                                ),
+                                                (
+                                                    "pbnjt.zbn",
+                                                    215636,
+                                                ),
+                                                (
+                                                    "sqd",
+                                                    124638,
+                                                ),
+                                            ],
+                                            size: 627813,
+                                        },
+                                    ],
+                                    files: [
+                                        (
+                                            "fcsjl",
+                                            57819,
+                                        ),
+                                        (
+                                            "pjnzdvd.gjm",
+                                            246864,
+                                        ),
+                                    ],
+                                    size: 932496,
+                                },
+                                Directory {
+                                    name: "tcsds",
+                                    children: [],
+                                    files: [
+                                        (
+                                            "gfmgb.wqj",
+                                            78812,
+                                        ),
+                                        (
+                                            "hnhfvz.dln",
+                                            218987,
+                                        ),
+                                        (
+                                            "mzzhqlq.zqp",
+                                            209640,
+                                        ),
+                                        (
+                                            "nml.ppg",
+                                            102492,
+                                        ),
+                                    ],
+                                    size: 609931,
+                                },
+                            ],
+                            files: [
+                                (
+                                    "fcsjl",
+                                    194998,
+                                ),
+                            ],
+                            size: 1903138,
+                        },
+                    ],
+                    files: [
+                        (
+                            "blm.wmt",
+                            130833,
+                        ),
+                        (
+                            "wjlmgq",
+                            218869,
+                        ),
+                    ],
+                    size: 2533865,
+                },
+            ],
+            files: [
+                (
+                    "gwtfzqvd.znb",
+                    140951,
+                ),
+            ],
+            size: 10822209,
+        },
+        Directory {
+            name: "nmtjtd",
+            children: [],
+            files: [
+                (
+                    "dvqmqlgw.ths",
+                    47477,
+                ),
+                (
+                    "vqgsglwq",
+                    51081,
+                ),
+            ],
+            size: 98558,
+        },
+    ],
+    files: [],
+    size: 34881695,
+}
+ansA: 1266077	 time: 25.415114ms
+s: 584
+s: 94853
+dir: Directory {
+    name: "/",
+    children: [
+        Directory {
+            name: "a",
+            children: [
+                Directory {
+                    name: "e",
+                    children: [],
+                    files: [
+                        (
+                            "i",
+                            584,
+                        ),
+                    ],
+                    size: 584,
+                },
+            ],
+            files: [
+                (
+                    "f",
+                    29116,
+                ),
+                (
+                    "g",
+                    2557,
+                ),
+                (
+                    "h.lst",
+                    62596,
+                ),
+            ],
+            size: 94853,
+        },
+        Directory {
+            name: "d",
+            children: [],
+            files: [
+                (
+                    "j",
+                    4060174,
+                ),
+                (
+                    "d.log",
+                    8033020,
+                ),
+                (
+                    "d.ext",
+                    5626152,
+                ),
+                (
+                    "k",
+                    7214296,
+                ),
+            ],
+            size: 24933642,
+        },
+    ],
+    files: [
+        (
+            "b.txt",
+            14848514,
+        ),
+        (
+            "c.dat",
+            8504156,
+        ),
+    ],
+    size: 48381165,
+}
+ansA: 95437	 time: 541.168µs
+s: 584
+s: 94853
+dir: Directory {
+    name: "/",
+    children: [
+        Directory {
+            name: "a",
+            children: [
+                Directory {
+                    name: "e",
+                    children: [],
+                    files: [
+                        (
+                            "i",
+                            584,
+                        ),
+                    ],
+                    size: 584,
+                },
+            ],
+            files: [
+                (
+                    "f",
+                    29116,
+                ),
+                (
+                    "g",
+                    2557,
+                ),
+                (
+                    "h.lst",
+                    62596,
+                ),
+            ],
+            size: 94853,
+        },
+        Directory {
+            name: "d",
+            children: [],
+            files: [
+                (
+                    "j",
+                    4060174,
+                ),
+                (
+                    "d.log",
+                    8033020,
+                ),
+                (
+                    "d.ext",
+                    5626152,
+                ),
+                (
+                    "k",
+                    7214296,
+                ),
+            ],
+            size: 24933642,
+        },
+    ],
+    files: [
+        (
+            "b.txt",
+            14848514,
+        ),
+        (
+            "c.dat",
+            8504156,
+        ),
+    ],
+    size: 48381165,
+}
+ansA: 95437	 time: 499.783µs
