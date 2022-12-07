@@ -1,4 +1,4 @@
-use std::{path::PathBuf, collections::HashMap, rc::Rc, ops::{Deref, DerefMut}, cell::{RefCell, Ref}, thread::current};
+use std::{path::PathBuf, collections::HashMap, rc::Rc, ops::{Deref, DerefMut}, cell::{RefCell, Ref}, thread::current, i64::MAX};
 use colored::{ColoredString, Colorize};
 use itertools::Itertools;
 use super::*;
@@ -14,7 +14,7 @@ impl Day7 {
     fn get_path(it: &InputType) -> PathBuf {
         match it {
             InputType::Test => PathBuf::from("./data/day7/test.txt"),
-            InputType::Real => PathBuf::from("./data/day7/real2.txt"),
+            InputType::Real => PathBuf::from("./data/day7/real.txt"),
         }
     }
 }
@@ -32,7 +32,6 @@ impl AdventDay for Day7 {
         if s < 100_000 { //this will probably never happen, but it might
             totsize += s;
         }
-        // println!("dir: {0:#?}", dir);
         totsize.to_string()
     }
 
@@ -41,7 +40,13 @@ impl AdventDay for Day7 {
         if input.len() < 3 { //arbitrary small value
             println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
         }
-        todo!();
+
+        let mut dir = get_dir_structure(&input).take();
+        let unused_space = 70_000_000 - get_dir_size(&mut dir, &mut 0);
+        let delete_size = 30_000_000 - unused_space;
+        let smallest = get_min_dir_size(&mut dir, delete_size);
+        
+        smallest.to_string()
     }
 }
 #[derive(Clone, Debug, Default)]
@@ -77,13 +82,13 @@ type File = (String, u32);
 fn get_dir_structure(input: &String) -> Rc<RefCell<Directory>> {
     let root = Rc::new(RefCell::new(Directory::new("/")));
     let mut current_dir = Rc::clone(&root);
-    let mut parents = vec![Rc::clone(&root)];
+    let mut parents: Vec<Rc<RefCell<Directory>>> = vec![];
 
     input.trim().split('\n').skip(1).for_each(|line| {
         let mut spl = line.trim().split(' ');
         if line.starts_with('$'){ //command
             if spl.nth(1).unwrap() == "cd" {
-                let dir_name = spl.next().unwrap();
+                let dir_name = spl.next().unwrap();                    
                 if dir_name == ".." {
                     parents.last().unwrap().borrow_mut().add_dir(current_dir.borrow_mut().clone());
                     current_dir = parents.pop().unwrap();
@@ -102,7 +107,11 @@ fn get_dir_structure(input: &String) -> Rc<RefCell<Directory>> {
             }
         }
     });
-    root.borrow_mut().add_dir(current_dir.borrow_mut().clone());
+
+    while !parents.is_empty() {
+        parents.last().unwrap().borrow_mut().add_dir(current_dir.borrow_mut().clone());
+        current_dir = parents.pop().unwrap();
+    }
     root
 }
 
@@ -110,7 +119,6 @@ fn get_dir_size(dir: &mut Directory, totsize: &mut u32) -> u32 {
     let mut size = dir.children.iter_mut().map(|d| {
         let s = get_dir_size(d, totsize);
         if s < 100_000 {
-            println!("s: {0:?}", s);
             *totsize += s;
         }
         s
@@ -118,4 +126,21 @@ fn get_dir_size(dir: &mut Directory, totsize: &mut u32) -> u32 {
     size += dir.files.iter().map(|file| file.1).sum::<u32>();
     dir.size = size;
     size
+}
+
+///Get minimum dir size for deletion
+fn get_min_dir_size(dir: &mut Directory, delete_size: u32) -> u32 {
+    println!("delete_size: {0:?}", delete_size);
+    match dir.children.iter_mut().map(|child| {
+        println!("child: {0:?}", child.size);
+        if child.size >= delete_size {
+            let m = get_min_dir_size(child, delete_size);
+            println!("m: {0:?}", m);
+            return std::cmp::min(child.size, m);
+        }
+        u32::MAX
+    }).min() {
+        Some(x) => x,
+        None => u32::MAX,
+    }
 }
