@@ -1,7 +1,7 @@
 use super::*;
 use colored::{ColoredString, Colorize};
 use std::{
-    collections::{HashMap, VecDeque},
+    collections::{HashMap, VecDeque, HashSet},
     path::PathBuf,
 };
 
@@ -48,12 +48,13 @@ impl AdventDay for Day6 {
                 v.push_front(c); //add new char
                 v.pop_back(); //remove oldest char
 
-                let mut h = HashMap::<&char, char>::with_capacity(4);
+                let mut h = HashSet::<&char>::with_capacity(4);
                 v.iter().for_each(|v_c| {
-                    h.insert(v_c, 'a');
+                    h.insert(v_c);
                 });
-                if h.keys().count() == 4 {
-                    return Some(i + 1); //+1 since aoc counts first element as 1
+
+                if h.len() == 4 {
+                    return Some(i + 1);
                 }
 
                 None
@@ -90,12 +91,12 @@ impl AdventDay for Day6 {
                 v.push_front(c); //add new char
                 v.pop_back(); //remove oldest char
 
-                let mut h = HashMap::<&char, char>::with_capacity(14);
+                let mut h = HashSet::<&char>::with_capacity(14);
                 v.iter().for_each(|v_c| {
-                    h.insert(v_c, 'a');
+                    h.insert(v_c);
                 });
 
-                if h.keys().count() == 14 {
+                if h.len() == 14 {
                     return Some(i + 1); //+1 since aoc counts first element as 1
                 }
 
