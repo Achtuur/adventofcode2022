@@ -52,8 +52,8 @@ impl AdventDay for Day7 {
 #[derive(Clone, Debug, Default)]
 struct Directory {
     name: String,
-    children: Box<Vec<Directory>>,
-    files: Box<Vec<File>>,
+    children: Vec<Directory>,
+    files: Vec<File>,
     size: u32,
 }
 
@@ -61,8 +61,8 @@ impl Directory {
     fn new(name: &str) -> Self {
         Directory {
             name: String::from(name),
-            children: Box::new(Vec::<Directory>::new()),
-            files: Box::new(Vec::<File>::new()),
+            children: Vec::<Directory>::new(),
+            files: Vec::<File>::new(),
             size: 0,
         }
     }
@@ -79,7 +79,7 @@ impl Directory {
 type File = (String, u32);
 
 #[allow(clippy::collapsible_else_if)]
-fn get_dir_structure(input: &String) -> Rc<RefCell<Directory>> {
+fn get_dir_structure(input: &str) -> Rc<RefCell<Directory>> {
     let root = Rc::new(RefCell::new(Directory::new("/")));
     let mut current_dir = Rc::clone(&root);
     let mut parents: Vec<Rc<RefCell<Directory>>> = vec![];
@@ -93,7 +93,6 @@ fn get_dir_structure(input: &String) -> Rc<RefCell<Directory>> {
                     parents.last().unwrap().borrow_mut().add_dir(current_dir.borrow_mut().clone());
                     current_dir = parents.pop().unwrap();
                 } else {
-                    // let target_dir = current_dir.borrow_mut().get_child(dir_name.to_owned()).unwrap().clone();
                     let target_dir = Directory::new(dir_name);
                     parents.push(Rc::clone(&current_dir));
                     current_dir = Rc::new(RefCell::new(target_dir));
@@ -115,6 +114,7 @@ fn get_dir_structure(input: &String) -> Rc<RefCell<Directory>> {
     root
 }
 
+///Gets size for each directory, also adds all sizes under `100.000` and puts them in `totsize`
 fn get_dir_size(dir: &mut Directory, totsize: &mut u32) -> u32 {
     let mut size = dir.children.iter_mut().map(|d| {
         let s = get_dir_size(d, totsize);
@@ -130,12 +130,9 @@ fn get_dir_size(dir: &mut Directory, totsize: &mut u32) -> u32 {
 
 ///Get minimum dir size for deletion
 fn get_min_dir_size(dir: &mut Directory, delete_size: u32) -> u32 {
-    println!("delete_size: {0:?}", delete_size);
     match dir.children.iter_mut().map(|child| {
-        println!("child: {0:?}", child.size);
         if child.size >= delete_size {
             let m = get_min_dir_size(child, delete_size);
-            println!("m: {0:?}", m);
             return std::cmp::min(child.size, m);
         }
         u32::MAX
