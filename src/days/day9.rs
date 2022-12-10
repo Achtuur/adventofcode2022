@@ -84,7 +84,6 @@ impl Rope {
     }
 
     pub fn do_command(&mut self, dir: &str) {
-        // let n = cmd.substring(1, cmd.len() - 1).parse::<i32>().unwrap();
         match dir {
             "U" => self.pos.1 += 1,
             "R" => self.pos.0 += 1,

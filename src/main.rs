@@ -15,12 +15,13 @@ use day6::Day6;
 use day7::Day7;
 use day8::Day8;
 use day9::Day9;
+use day10::Day10;
 
 fn main() {
     // let it = InputType::Test;
     let it = InputType::Real;
 
-    let day = Day9::new();
+    let day = Day10::new();
 
     let t = Instant::now();
     let ansA = day.A(&it);
