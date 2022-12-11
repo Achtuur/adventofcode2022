@@ -1,0 +1,176 @@
+use std::path::PathBuf;
+use colored::{ColoredString, Colorize};
+use itertools::Itertools;
+use regex::Regex;
+use super::*;
+
+pub struct Day11 {
+}
+
+impl Day11 {
+    pub fn new() -> Day11 {
+        Day11{}
+    }
+
+    fn get_path(it: &InputType) -> PathBuf {
+        match it {
+            InputType::Test => PathBuf::from("./data/day11/test.txt"),
+            InputType::Real => PathBuf::from("./data/day11/real.txt"),
+        }
+    }
+}
+
+impl AdventDay for Day11 {
+    fn A(&self, it: &InputType) -> String {
+        let input = std::fs::read_to_string(Self::get_path(it)).expect("Reading input failed, file doesn't exist most likely");
+        if input.len() < 3 { //arbitrary small value
+            println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
+        }
+        
+        #[cfg(target_os = "windows")]
+        let input_it = input.split("\r\n\r\n");
+
+        #[cfg(target_os = "linux")]
+        let input_it = input.split("\n\n");
+
+        let mut monkeys = input_it.map(|monkey_inp| {
+            Monkey::from_input(monkey_inp)
+        }).collect_vec();
+
+        for _ in 0..20 { //20 rounds
+            for i in 0..monkeys.len() {
+                for j in 0..monkeys[i].items.len() {
+                    let mut worry = monkeys[i].items.pop().unwrap();
+                    monkeys[i].times_inspected += 1;
+                    worry = monkeys[i].do_op(worry) / 3;
+                    if worry % monkeys[i].test == 0 {
+                        let t = monkeys[i].true_target;
+                        monkeys[t].items.push(worry);
+                    } else {
+                        let t = monkeys[i].false_target;
+                        monkeys[t].items.push(worry);
+                    }
+                }
+            }
+        }
+
+        monkeys.sort_by(|a, b| b.times_inspected.partial_cmp(&a.times_inspected).unwrap());
+
+        (monkeys[0].times_inspected * monkeys[1].times_inspected).to_string()
+    }
+
+    fn B(&self, it: &InputType) -> String {
+        let input = std::fs::read_to_string(Self::get_path(it)).expect("Reading input failed, file doesn't exist most likely");
+        if input.len() < 3 { //arbitrary small value
+            println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
+        }
+        
+        #[cfg(target_os = "windows")]
+        let input_it = input.split("\r\n\r\n");
+
+        #[cfg(target_os = "linux")]
+        let input_it = input.split("\n\n");
+
+        let mut monkeys = input_it.map(|monkey_inp| {
+            Monkey::from_input(monkey_inp)
+        }).collect_vec();
+
+        for _ in 0..10_000 { //20 rounds
+            for i in 0..monkeys.len() {
+                for j in 0..monkeys[i].items.len() {
+                    let mut worry = monkeys[i].items.pop().unwrap();
+                    monkeys[i].times_inspected += 1;
+                    worry = monkeys[i].do_op(worry);
+                    if worry % monkeys[i].test == 0 {
+                        let t = monkeys[i].true_target;
+                        monkeys[t].items.push(worry);
+                    } else {
+                        let t = monkeys[i].false_target;
+                        monkeys[t].items.push(worry);
+                    }
+                }
+            }
+        }
+
+        monkeys.sort_by(|a, b| b.times_inspected.partial_cmp(&a.times_inspected).unwrap());
+
+        (monkeys[0].times_inspected * monkeys[1].times_inspected).to_string()
+    }
+}
+
+struct Monkey {
+    items: Vec<u32>,
+    operation: Box<dyn Fn(u32, u32) -> u32>,
+    operation_arg: u32,
+    test: u32,
+    true_target: usize,
+    false_target: usize,
+    times_inspected: usize,
+}
+
+impl Monkey {
+    pub fn new() -> Self {
+        Monkey { 
+            items: Vec::<u32>::new(), 
+            operation: Box::new(|a, b| {a}),
+            operation_arg: 0,
+            test: 0, 
+            true_target: 0, 
+            false_target: 0,
+            times_inspected: 0,
+        }
+    }
+
+    pub fn from_input(input: &str) -> Self {
+        let mut spl = input.lines();
+        let (_, items, op, test, true_throw, false_throw) = spl.next_tuple().unwrap();
+        let mut m = Monkey::new();
+        /* Items */
+        let reg = Regex::new(r"\d+").unwrap();
+        m.items = reg.find_iter(items).map(|item| item.as_str().parse::<u32>().unwrap()).collect_vec();
+
+        /* operation */
+        let reg = Regex::new(r"old ([\+\*]) (\d+|old)").unwrap();
+        let cap = reg.captures(op).unwrap();
+        match (cap.get(1).unwrap().as_str(), cap.get(2).unwrap().as_str()) {
+            ("+", "old") => m.operation = Box::new(add_self),
+            ("*", "old") => m.operation = Box::new(mul_self),
+            ("+", x) => {
+                m.operation = Box::new(add);
+                m.operation_arg = x.parse().unwrap();
+            },
+            ("*", x) => {
+                m.operation = Box::new(mul);
+                m.operation_arg = x.parse().unwrap();
+            },
+            _ => unreachable!()
+        }
+
+        m.test = test.trim().split(' ').nth(3).unwrap().parse().unwrap();
+
+        m.true_target = true_throw.trim().split(' ').nth(5).unwrap().parse().unwrap();
+        m.false_target = false_throw.trim().split(' ').nth(5).unwrap().parse().unwrap();
+
+        m
+    }
+
+    pub fn do_op(&self, arg: u32) -> u32 {
+        (self.operation)(arg, self.operation_arg)
+    }
+}
+
+fn add(a: u32, b: u32) -> u32 {
+    a + b
+}
+
+fn mul(a: u32, b: u32) -> u32 {
+    a * b
+}
+
+fn add_self(a:u32, b:u32) -> u32 {
+    a + a
+}
+
+fn mul_self(a:u32, b:u32) -> u32 {
+    a * a
+}
