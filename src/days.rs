@@ -11,6 +11,7 @@ pub mod day10;
 pub mod day11;
 pub mod day12;
 
+#[allow(dead_code)]
 pub enum InputType {
     Test,
     Real,

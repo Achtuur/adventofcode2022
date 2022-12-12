@@ -37,8 +37,8 @@ impl AdventDay for Day1 {
     }
 }
 
-fn get_calories(input: &String) -> impl Iterator<Item = u32> + '_ {
-    input.trim().split("\r\n\r\n").map(|elf| {
+fn get_calories(input: &str) -> impl Iterator<Item = u32> + '_ {
+    input.lines().map(|elf| {
         elf.split('\n')
             .map(|cookie| {
                 return cookie.trim().parse::<u32>().unwrap();

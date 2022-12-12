@@ -1,4 +1,4 @@
-#![allow(non_snake_case, unused_imports)]
+#![allow(non_snake_case, unused_imports, dead_code)]
 mod days;
 use colored::{ColoredString, Colorize};
 use std::time::{Duration, Instant};

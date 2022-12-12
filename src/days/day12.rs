@@ -26,7 +26,7 @@ impl AdventDay for Day12 {
             println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
         }
 
-        let width = input.split("\n").next().unwrap().trim().len();
+        let width = input.split('\n').next().unwrap().trim().len();
 
         let mut map = input.lines().flat_map(|line| line.chars().map(|c| c as u8 - b'A')).collect::<Vec<u8>>();
         let startI = map.iter().position(|c| *c == b'S' - b'A').unwrap();
@@ -44,7 +44,7 @@ impl AdventDay for Day12 {
         }
 
         let mut map = input.lines().flat_map(|line| line.chars().map(|c| c as u8 - b'A')).collect::<Vec<u8>>();
-        let width = input.split("\n").next().unwrap().trim().len();
+        let width = input.split('\n').next().unwrap().trim().len();
         let (width, height) = get_dimensions(&map, width);
 
         let start_indices = map.iter().enumerate().filter_map(|(i, c)| {

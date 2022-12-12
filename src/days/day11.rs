@@ -28,19 +28,13 @@ impl AdventDay for Day11 {
             println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
         }
         
-        #[cfg(target_os = "windows")]
-        let input_it = input.split("\r\n\r\n");
-
-        #[cfg(target_os = "linux")]
-        let input_it = input.split("\n\n");
-
-        let mut monkeys = input_it.map(|monkey_inp| {
+        let mut monkeys = input.lines().map(|monkey_inp| {
             Monkey::from_input(monkey_inp)
         }).collect_vec();
 
         for _ in 0..20 { //20 rounds
             for i in 0..monkeys.len() {
-                for j in 0..monkeys[i].items.len() {
+                for _ in 0..monkeys[i].items.len() {
                     let mut worry = monkeys[i].items.pop().unwrap();
                     monkeys[i].times_inspected += 1;
                     worry = monkeys[i].do_op(worry) / 3;
@@ -65,14 +59,8 @@ impl AdventDay for Day11 {
         if input.len() < 3 { //arbitrary small value
             println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
         }
-        
-        #[cfg(target_os = "windows")]
-        let input_it = input.split("\r\n\r\n");
 
-        #[cfg(target_os = "linux")]
-        let input_it = input.split("\n\n");
-
-        let mut monkeys = input_it.map(|monkey_inp| {
+        let mut monkeys = input.lines().map(|monkey_inp| {
             Monkey::from_input(monkey_inp)
         }).collect_vec();
 
@@ -171,10 +159,10 @@ fn mul(a: u64, b: u64) -> u64 {
     a * b
 }
 
-fn add_self(a:u64, b:u64) -> u64 {
+fn add_self(a:u64, _b:u64) -> u64 {
     a + a
 }
 
-fn mul_self(a:u64, b:u64) -> u64 {
+fn mul_self(a:u64, _b:u64) -> u64 {
     a * a
 }

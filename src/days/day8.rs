@@ -32,7 +32,7 @@ impl AdventDay for Day8 {
         #[cfg(target_os = "linux")]
         let input_it = input.trim().split("\n");
 
-        let width = input.split("\n").next().unwrap().trim().len();
+        let width = input.split('\n').next().unwrap().trim().len();
 
         //Get 2d vector of map
         let tree_map: Vec<u8> = input_it.flat_map(|line| line.chars().into_iter().map(|c| c as u8 - b'0')).collect_vec();
@@ -64,7 +64,7 @@ impl AdventDay for Day8 {
         #[cfg(target_os = "linux")]
         let input_it = input.trim().split("\n");
 
-        let width = input.split("\n").next().unwrap().trim().len();
+        let width = input.split('\n').next().unwrap().trim().len();
 
         //Get 2d vector of map
         let tree_map: Vec<u8> = input_it.flat_map(|line| line.chars().into_iter().map(|c| c as u8 - b'0')).collect_vec();
@@ -123,7 +123,7 @@ fn is_visible(tree_map: &[u8], start_i: usize, width: usize, height: usize) -> b
     dir.iter().any(|d| {
         let mut c = 0;
         let mut new_i = (start_i as i32 + *d as i32) as usize;
-        while(checkBounds(start_i, new_i, width, height)) {
+        while checkBounds(start_i, new_i, width, height) {
             if tree_map[new_i] >= tree_map[start_i] {
                 return false
             }
@@ -140,7 +140,7 @@ fn get_scenic_score(tree_map: &[u8], start_i: usize, width: usize, height: usize
     dir.iter().map(|d| {
         let mut c = 0;
         let mut new_i = (start_i as i32 + (c+1)**d as i32) as usize;
-        while(checkBounds(start_i, new_i, width, height)) {
+        while checkBounds(start_i, new_i, width, height) {
             if tree_map[new_i] >= tree_map[start_i] { //if blocked
                 c+=1;
                 break;
