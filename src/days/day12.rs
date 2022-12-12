@@ -43,10 +43,17 @@ impl AdventDay for Day12 {
             println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
         }
 
-        let width = input.split("\n").next().unwrap().trim().len();
-
         let mut map = input.lines().flat_map(|line| line.chars().map(|c| c as u8 - b'A')).collect::<Vec<u8>>();
-        let start_indices = map.iter().enumerate().filter_map(|(i, c)| (*c == b'a' - b'A').then_some(i)).collect::<Vec<usize>>();
+        let width = input.split("\n").next().unwrap().trim().len();
+        let (width, height) = get_dimensions(&map, width);
+
+        let start_indices = map.iter().enumerate().filter_map(|(i, c)| {
+            if *c == b'a' - b'A' && neighbour_is_valid(&map, i, width, height) {
+                return Some(i);
+            }
+            None
+        }).collect::<Vec<usize>>();
+
         let endI = map.iter().position(|c| *c == b'E' - b'A').unwrap();
 
         let path_len = start_indices.iter().map(|startI| lee(&mut map, *startI, endI, width as i32)).min().unwrap();
@@ -62,15 +69,15 @@ pub fn lee(map: &mut Vec<u8>, startI: usize, endI: usize, width: i32) -> usize {
     let mut step_map = vec![0; map.len()];
     let mut queue = VecDeque::<usize>::new();
     let (width, height) = get_dimensions(map, width as usize);
-    let dir = [1, -1, width as i32, -(width as i32)];
+    let dir = get_dir(width);
 
     // print_2d_vec(&map, width);
-    let old_start = map[startI];
-    if map[startI] < b'a' - b'A' {
-        map[startI] = b'z' - b'A'; //start with highest letter so it always succeeds
+    let oldstart = map[startI];
+    if map[startI] == b'S' - b'A' {
+        map[startI] = b'a' - b'A'; //start with highest letter so it always succeeds
     }
-
     map[endI] = b'z' - b'A';
+
     step_map[startI] = 1;
     queue.push_front(startI);
 
@@ -90,12 +97,29 @@ pub fn lee(map: &mut Vec<u8>, startI: usize, endI: usize, width: i32) -> usize {
         }
     }
 
-    map[startI] = old_start; //revert start back to 'S'
+    map[startI] = oldstart; //revert start back to initial value
     map[endI] = b'E' - b'A';
 
     // print_2d_vec(&step_map, width);
 
+    if step_map[endI] == 0 { // no valid route
+        return usize::MAX
+    }
     step_map[endI] - 1
+}
+
+///Check if one of neighbours is valid starting position
+/// 
+/// Valid means it has a neighbour that is 1 higher
+fn neighbour_is_valid(map: &[u8], i: usize, width: usize, height: usize) -> bool {
+    let dir = get_dir(width);
+    dir.iter().any(|d| {
+        let n_i = i as i32 + d;
+        if checkBounds(i, n_i, width, height) && map[i] == map[n_i as usize] - 1 {
+            return true;
+        }
+        false
+    })
 }
 
 ///Returns (width, height) tuple based on width of single line of input
@@ -132,6 +156,11 @@ fn same_col(i1: usize, i2: usize, width: usize) -> bool {
     x1 == x2
 }
 
-fn print_2d_vec<T>(map: &Vec<T>, width: usize) where T:std::fmt::Debug {
-    map.chunks(width).into_iter().for_each(|line| println!("{:?}", line));
+fn get_dir(width: usize) -> [i32; 4] {
+    [1, -1, width as i32, -(width as i32)]
+}
+
+fn print_2d_vec<T>(map: &[T], width: usize) where T: std::fmt::Debug {
+    map.chunks(width).into_iter().for_each(|line| println!("{:02?}", line));
+    println!("\n");
 }
