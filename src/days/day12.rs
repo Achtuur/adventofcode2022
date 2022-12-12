@@ -42,7 +42,22 @@ impl AdventDay for Day12 {
         if input.len() < 3 { //arbitrary small value
             println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
         }
-        todo!();
+
+        let width = input.split("\n").next().unwrap().trim().len();
+
+        let mut map = input.lines().flat_map(|line| line.chars().map(|c| c as u8 - b'A')).collect::<Vec<u8>>();
+        let start_indices = map.iter().enumerate().filter_map(|(i, c)| (*c == b'a' - b'A').then_some(i)).collect::<Vec<usize>>();
+        let endI = map.iter().position(|c| *c == b'E' - b'A').unwrap();
+
+        start_indices.iter().for_each(|el| {
+            println!("i2xy(el): {0:?}", i_to_xy(*el, width));
+        });
+
+        let path_len = start_indices.iter().map(|startI| lee(&mut map, *startI, endI, width as i32)).collect_vec();
+        
+        println!("path_len: {0:?}", path_len);
+
+        path_len[0].to_string()
     }
 }
 
@@ -55,10 +70,13 @@ pub fn lee(map: &mut Vec<u8>, startI: usize, endI: usize, width: i32) -> usize {
     let (width, height) = get_dimensions(map, width as usize);
     let dir = [1, -1, width as i32, -(width as i32)];
 
-    print_2d_vec(&map, width);
+    // print_2d_vec(&map, width);
+    let old_start = map[startI];
+    if map[startI] < b'a' {
+        map[startI] = b'z' - b'A'; //start with highest letter so it always succeeds
+    }
 
-    map[startI] = b'z'; //start with highest letter so it always succeeds
-    map[endI] = b'z';
+    map[endI] = b'z' - b'A';
     step_map[startI] = 1;
     queue.push_front(startI);
 
@@ -78,10 +96,10 @@ pub fn lee(map: &mut Vec<u8>, startI: usize, endI: usize, width: i32) -> usize {
         }
     }
 
-    map[startI] = b'S'; //revert start back to 'S'
-    map[endI] = b'E';
+    map[startI] = old_start; //revert start back to 'S'
+    map[endI] = b'E' - b'A';
 
-    print_2d_vec(&step_map, width);
+    // print_2d_vec(&step_map, width);
 
     step_map[endI] - 1
 }
