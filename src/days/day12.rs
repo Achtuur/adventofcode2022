@@ -49,15 +49,9 @@ impl AdventDay for Day12 {
         let start_indices = map.iter().enumerate().filter_map(|(i, c)| (*c == b'a' - b'A').then_some(i)).collect::<Vec<usize>>();
         let endI = map.iter().position(|c| *c == b'E' - b'A').unwrap();
 
-        start_indices.iter().for_each(|el| {
-            println!("i2xy(el): {0:?}", i_to_xy(*el, width));
-        });
-
-        let path_len = start_indices.iter().map(|startI| lee(&mut map, *startI, endI, width as i32)).collect_vec();
+        let path_len = start_indices.iter().map(|startI| lee(&mut map, *startI, endI, width as i32)).min().unwrap();
         
-        println!("path_len: {0:?}", path_len);
-
-        path_len[0].to_string()
+        path_len.to_string()
     }
 }
 
@@ -72,7 +66,7 @@ pub fn lee(map: &mut Vec<u8>, startI: usize, endI: usize, width: i32) -> usize {
 
     // print_2d_vec(&map, width);
     let old_start = map[startI];
-    if map[startI] < b'a' {
+    if map[startI] < b'a' - b'A' {
         map[startI] = b'z' - b'A'; //start with highest letter so it always succeeds
     }
 
