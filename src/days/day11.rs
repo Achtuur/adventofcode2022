@@ -1,16 +1,15 @@
-use std::path::PathBuf;
+use super::*;
 use colored::{ColoredString, Colorize};
 use itertools::Itertools;
 use num::integer::lcm;
 use regex::Regex;
-use super::*;
+use std::path::PathBuf;
 
-pub struct Day11 {
-}
+pub struct Day11 {}
 
 impl Day11 {
     pub fn new() -> Day11 {
-        Day11{}
+        Day11 {}
     }
 
     fn get_path(it: &InputType) -> PathBuf {
@@ -23,16 +22,25 @@ impl Day11 {
 
 impl AdventDay for Day11 {
     fn A(&self, it: &InputType) -> String {
-        let input = std::fs::read_to_string(Self::get_path(it)).expect("Reading input failed, file doesn't exist most likely");
-        if input.len() < 3 { //arbitrary small value
-            println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
+        let input = std::fs::read_to_string(Self::get_path(it))
+            .expect("Reading input failed, file doesn't exist most likely");
+        if input.len() < 3 {
+            //arbitrary small value
+            println!(
+                "{}",
+                "Input file empty, you probably forgot to copy the input data"
+                    .bold()
+                    .red()
+            );
         }
-        
-        let mut monkeys = input.lines().map(|monkey_inp| {
-            Monkey::from_input(monkey_inp)
-        }).collect_vec();
 
-        for _ in 0..20 { //20 rounds
+        let mut monkeys = input
+            .lines()
+            .map(|monkey_inp| Monkey::from_input(monkey_inp))
+            .collect_vec();
+
+        for _ in 0..20 {
+            //20 rounds
             for i in 0..monkeys.len() {
                 for _ in 0..monkeys[i].items.len() {
                     let mut worry = monkeys[i].items.pop().unwrap();
@@ -55,18 +63,27 @@ impl AdventDay for Day11 {
     }
 
     fn B(&self, it: &InputType) -> String {
-        let input = std::fs::read_to_string(Self::get_path(it)).expect("Reading input failed, file doesn't exist most likely");
-        if input.len() < 3 { //arbitrary small value
-            println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
+        let input = std::fs::read_to_string(Self::get_path(it))
+            .expect("Reading input failed, file doesn't exist most likely");
+        if input.len() < 3 {
+            //arbitrary small value
+            println!(
+                "{}",
+                "Input file empty, you probably forgot to copy the input data"
+                    .bold()
+                    .red()
+            );
         }
 
-        let mut monkeys = input.lines().map(|monkey_inp| {
-            Monkey::from_input(monkey_inp)
-        }).collect_vec();
+        let mut monkeys = input
+            .lines()
+            .map(|monkey_inp| Monkey::from_input(monkey_inp))
+            .collect_vec();
 
         let lcm: u64 = monkeys.iter().fold(1, |acc, el| lcm(el.test, acc)); //thank you Victor <3
 
-        for _ in 0..10_000 { //10000 rounds
+        for _ in 0..10_000 {
+            //10000 rounds
             for i in 0..monkeys.len() {
                 for _ in 0..monkeys[i].items.len() {
                     let mut worry = monkeys[i].items.pop().unwrap();
@@ -102,12 +119,12 @@ struct Monkey {
 
 impl Monkey {
     pub fn new() -> Self {
-        Monkey { 
-            items: Vec::<u64>::new(), 
-            operation: Box::new(|a, _b| {a}),
+        Monkey {
+            items: Vec::<u64>::new(),
+            operation: Box::new(|a, _b| a),
             operation_arg: 0,
-            test: 0, 
-            true_target: 0, 
+            test: 0,
+            true_target: 0,
             false_target: 0,
             times_inspected: 0,
         }
@@ -119,7 +136,10 @@ impl Monkey {
         let mut m = Monkey::new();
         /* Items */
         let reg = Regex::new(r"\d+").unwrap();
-        m.items = reg.find_iter(items).map(|item| item.as_str().parse::<u64>().unwrap()).collect_vec();
+        m.items = reg
+            .find_iter(items)
+            .map(|item| item.as_str().parse::<u64>().unwrap())
+            .collect_vec();
 
         /* operation */
         let reg = Regex::new(r"old ([\+\*]) (\d+|old)").unwrap();
@@ -130,18 +150,30 @@ impl Monkey {
             ("+", x) => {
                 m.operation = Box::new(add);
                 m.operation_arg = x.parse().unwrap();
-            },
+            }
             ("*", x) => {
                 m.operation = Box::new(mul);
                 m.operation_arg = x.parse().unwrap();
-            },
-            _ => unreachable!()
+            }
+            _ => unreachable!(),
         }
 
         m.test = test.trim().split(' ').nth(3).unwrap().parse().unwrap();
 
-        m.true_target = true_throw.trim().split(' ').nth(5).unwrap().parse().unwrap();
-        m.false_target = false_throw.trim().split(' ').nth(5).unwrap().parse().unwrap();
+        m.true_target = true_throw
+            .trim()
+            .split(' ')
+            .nth(5)
+            .unwrap()
+            .parse()
+            .unwrap();
+        m.false_target = false_throw
+            .trim()
+            .split(' ')
+            .nth(5)
+            .unwrap()
+            .parse()
+            .unwrap();
 
         m
     }
@@ -159,10 +191,10 @@ fn mul(a: u64, b: u64) -> u64 {
     a * b
 }
 
-fn add_self(a:u64, _b:u64) -> u64 {
+fn add_self(a: u64, _b: u64) -> u64 {
     a + a
 }
 
-fn mul_self(a:u64, _b:u64) -> u64 {
+fn mul_self(a: u64, _b: u64) -> u64 {
     a * a
 }

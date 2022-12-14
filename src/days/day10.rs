@@ -1,14 +1,13 @@
-use std::path::PathBuf;
+use super::*;
 use colored::{ColoredString, Colorize};
 use itertools::Itertools;
-use super::*;
+use std::path::PathBuf;
 
-pub struct Day10 {
-}
+pub struct Day10 {}
 
 impl Day10 {
     pub fn new() -> Day10 {
-        Day10{}
+        Day10 {}
     }
 
     fn get_path(it: &InputType) -> PathBuf {
@@ -21,25 +20,42 @@ impl Day10 {
 
 impl AdventDay for Day10 {
     fn A(&self, it: &InputType) -> String {
-        let input = std::fs::read_to_string(Self::get_path(it)).expect("Reading input failed, file doesn't exist most likely");
-        if input.len() < 3 { //arbitrary small value
-            println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
+        let input = std::fs::read_to_string(Self::get_path(it))
+            .expect("Reading input failed, file doesn't exist most likely");
+        if input.len() < 3 {
+            //arbitrary small value
+            println!(
+                "{}",
+                "Input file empty, you probably forgot to copy the input data"
+                    .bold()
+                    .red()
+            );
         }
 
         let mut elfpc = ElfPc::new();
-        let sum: i32 = input.lines().map(|line| {
-            elfpc.cycle(line, None);
-            elfpc.check_signal_strength();
-            elfpc.signal_strength
-        }).sum();
+        let sum: i32 = input
+            .lines()
+            .map(|line| {
+                elfpc.cycle(line, None);
+                elfpc.check_signal_strength();
+                elfpc.signal_strength
+            })
+            .sum();
 
         sum.to_string()
     }
 
     fn B(&self, it: &InputType) -> String {
-        let input = std::fs::read_to_string(Self::get_path(it)).expect("Reading input failed, file doesn't exist most likely");
-        if input.len() < 3 { //arbitrary small value
-            println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
+        let input = std::fs::read_to_string(Self::get_path(it))
+            .expect("Reading input failed, file doesn't exist most likely");
+        if input.len() < 3 {
+            //arbitrary small value
+            println!(
+                "{}",
+                "Input file empty, you probably forgot to copy the input data"
+                    .bold()
+                    .red()
+            );
         }
         let mut elfpc = ElfPc::new();
         let mut crt = Crt::new();
@@ -53,7 +69,6 @@ impl AdventDay for Day10 {
     }
 }
 
-
 struct ElfPc {
     pc: usize,
     x: i32,
@@ -63,7 +78,12 @@ struct ElfPc {
 
 impl ElfPc {
     pub fn new() -> ElfPc {
-        ElfPc { pc: 1, x: 1, signal_strength: 0, signal_checked: false}
+        ElfPc {
+            pc: 1,
+            x: 1,
+            signal_strength: 0,
+            signal_checked: false,
+        }
     }
 
     pub fn cycle(&mut self, instr: &str, crt: Option<&mut Crt>) {
@@ -80,7 +100,7 @@ impl ElfPc {
                 }
                 self.x += spl.next().unwrap().parse::<i32>().unwrap();
                 self.pc += 1;
-            },
+            }
             _ => (),
         };
     }
@@ -102,7 +122,10 @@ struct Crt {
 
 impl Crt {
     pub fn new() -> Self {
-        Crt { pc: 1, screen: vec![vec!['.'; 40]; 6] }
+        Crt {
+            pc: 1,
+            screen: vec![vec!['.'; 40]; 6],
+        }
     }
 
     pub fn cycle(&mut self, reg_x: i32) {
@@ -113,8 +136,11 @@ impl Crt {
         }
         self.pc += 1;
     }
-    
+
     pub fn screen_to_string(&self) -> String {
-        self.screen.iter().map(|line| line.iter().collect::<String>() + "\n").collect()
+        self.screen
+            .iter()
+            .map(|line| line.iter().collect::<String>() + "\n")
+            .collect()
     }
 }

@@ -1,15 +1,14 @@
-use std::{path::PathBuf, collections::HashSet};
+use super::*;
 use colored::{ColoredString, Colorize};
 use itertools::Itertools;
+use std::{collections::HashSet, path::PathBuf};
 use substring::Substring;
-use super::*;
 
-pub struct Day9 {
-}
+pub struct Day9 {}
 
 impl Day9 {
     pub fn new() -> Day9 {
-        Day9{}
+        Day9 {}
     }
 
     fn get_path(it: &InputType) -> PathBuf {
@@ -22,9 +21,16 @@ impl Day9 {
 
 impl AdventDay for Day9 {
     fn A(&self, it: &InputType) -> String {
-        let input = std::fs::read_to_string(Self::get_path(it)).expect("Reading input failed, file doesn't exist most likely");
-        if input.len() < 3 { //arbitrary small value
-            println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
+        let input = std::fs::read_to_string(Self::get_path(it))
+            .expect("Reading input failed, file doesn't exist most likely");
+        if input.len() < 3 {
+            //arbitrary small value
+            println!(
+                "{}",
+                "Input file empty, you probably forgot to copy the input data"
+                    .bold()
+                    .red()
+            );
         }
 
         let mut head = Rope::new();
@@ -39,14 +45,21 @@ impl AdventDay for Day9 {
                 tail.add_unique_pos();
             })
         });
-        
+
         tail.visited.len().to_string()
     }
 
     fn B(&self, it: &InputType) -> String {
-        let input = std::fs::read_to_string(Self::get_path(it)).expect("Reading input failed, file doesn't exist most likely");
-        if input.len() < 3 { //arbitrary small value
-            println!("{}", "Input file empty, you probably forgot to copy the input data".bold().red());
+        let input = std::fs::read_to_string(Self::get_path(it))
+            .expect("Reading input failed, file doesn't exist most likely");
+        if input.len() < 3 {
+            //arbitrary small value
+            println!(
+                "{}",
+                "Input file empty, you probably forgot to copy the input data"
+                    .bold()
+                    .red()
+            );
         }
         let mut head = vec![Rope::new(); 9];
         let mut tail = Rope::new();
@@ -58,13 +71,13 @@ impl AdventDay for Day9 {
                 head[0].do_command(dir);
                 for i in 0..8 {
                     let p = head[i].pos;
-                    head[i+1].follow_other(p);
+                    head[i + 1].follow_other(p);
                 }
                 tail.follow_other(head[8].pos);
                 tail.add_unique_pos();
             })
         });
-        
+
         tail.visited.len().to_string()
     }
 }
@@ -110,13 +123,12 @@ impl Rope {
     pub fn add_unique_pos(&mut self) {
         self.visited.insert(self.pos);
     }
-
 }
 
 fn is_same_column(dx: i32, dy: i32) -> bool {
     dx == 0 && dy != 0
 }
 
-fn is_same_row(dx:i32, dy:i32) -> bool {
+fn is_same_row(dx: i32, dy: i32) -> bool {
     dy == 0 && dx != 0
 }
