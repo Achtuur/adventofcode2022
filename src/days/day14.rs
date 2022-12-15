@@ -35,7 +35,7 @@ impl AdventDay for Day14 {
         while !cave.is_done {
             cave.step(Part::A);
         }
-        (cave.sands.len() - 1).to_string()
+        (cave.sands_finalpos.len() - 1).to_string()
     }
 
     fn B(&self, it: &InputType) -> String {
@@ -54,7 +54,7 @@ impl AdventDay for Day14 {
         while !cave.is_done {
             cave.step(Part::B);
         }
-        (cave.sands.len()).to_string()
+        (cave.sands_finalpos.len()).to_string()
     }
 }
 
@@ -63,7 +63,6 @@ struct Cave {
     rocks: Vec<Rocks>,
     rocks_set: HashSet<(i32, i32)>,
     floor: i32,
-    sands: Vec<Sand>,
     sands_finalpos: HashSet<(i32, i32)>,
     is_done: bool,
 }
@@ -77,7 +76,6 @@ impl Cave {
         Cave {
             rocks,
             rocks_set,
-            sands: Vec::<Sand>::new(),
             floor,
             is_done: false,
             sands_finalpos: HashSet::new(),
@@ -85,34 +83,33 @@ impl Cave {
     }
 
     pub fn step(&mut self, part: Part) {
-        if self.sands.is_empty() || self.sands[self.sands.len() - 1].landed {
-            self.sands.push(Sand::new());
-            // println!("self.sands.len(): {0:?}", self.sands.len());
-        }
-        let i = self.sands.len() - 1;
-        let mut moved: bool = false;
+        let mut sand = Sand::new();
 
-        for new_pos in self.sands[i].get_new_pos() { //try and move either down, left down or right down
-            if !self.pos_is_blocked(&new_pos, &part) {
-                self.sands[i].pos = new_pos;
-                moved = true;
+        let d = sand.get_new_pos();
+        loop {
+            let (down, left, right) = d.iter().map(|dir| sand.calc_pos(dir)).collect_tuple().unwrap();
+            if !self.pos_is_blocked(&down) {
+                sand.pos = down;
+            } else if !self.pos_is_blocked(&left) {
+                sand.pos = left;
+            } else if !self.pos_is_blocked(&right) {
+                sand.pos = right;
+            } else {
+                sand.landed = true;
+                self.sands_finalpos.insert(sand.pos);
                 break;
             }
         }
 
-        if !moved { //if not moved, then sand has landed
-            self.sands[i].landed = true;
-            self.sands_finalpos.insert(self.sands[i].pos);
-        }
         //Stop condition
         match part {
             Part::A => {
-                if self.sands[i].pos.1 > self.floor {
+                if sand.pos.1 >= self.floor - 2 {
                     self.is_done = true;
                 }
             },
             Part::B => {
-                if self.sands[i].landed && self.sands[i].pos == (500, 0) {
+                if sand.landed && sand.pos == (500, 0) {
                     self.is_done = true;
                 }
             }
@@ -120,34 +117,24 @@ impl Cave {
         
     }
 
-    pub fn pos_is_blocked_old(&self, new_pos: &(i32, i32), part: &Part) -> bool {
-        match part {
-            Part::A => {
-                self.rocks.iter().any(|rock| rock.blocks_sand(new_pos)) || //rock blocks path
-                self.sands.iter().rev().any(|sand| sand.pos == *new_pos) //sand already there
-            }
-            Part::B => {
-                new_pos.1 >= self.floor || 
-                self.rocks.iter().any(|rock| rock.blocks_sand(new_pos)) || //rock blocks path
-                self.sands.iter().rev().any(|sand| sand.pos == *new_pos) //sand already there
-            }
-        }
-    }
+    // pub fn pos_is_blocked_old(&self, new_pos: &(i32, i32), part: &Part) -> bool {
+    //     match part {
+    //         Part::A => {
+    //             self.rocks.iter().any(|rock| rock.blocks_sand(new_pos)) || //rock blocks path
+    //             self.sands.iter().rev().any(|sand| sand.pos == *new_pos) //sand already there
+    //         }
+    //         Part::B => {
+    //             new_pos.1 >= self.floor || 
+    //             self.rocks.iter().any(|rock| rock.blocks_sand(new_pos)) || //rock blocks path
+    //             self.sands.iter().rev().any(|sand| sand.pos == *new_pos) //sand already there
+    //         }
+    //     }
+    // }
 
-    pub fn pos_is_blocked(&self, new_pos: &(i32, i32), part: &Part) -> bool {
-        match part {
-            Part::A => {
-                // self.rocks.iter().any(|rock| rock.blocks_sand(new_pos)) || //old
-                self.rocks_set.contains(new_pos) || 
-                self.sands_finalpos.contains(new_pos)
-            }
-            Part::B => {
-                new_pos.1 >= self.floor ||
-                // self.rocks.iter().any(|rock| rock.blocks_sand(new_pos)) || //old
-                self.rocks_set.contains(new_pos) || 
-                self.sands_finalpos.contains(new_pos)
-            }
-        }
+    pub fn pos_is_blocked(&self, new_pos: &(i32, i32)) -> bool {
+        new_pos.1 >= self.floor ||
+        self.rocks_set.contains(new_pos) || 
+        self.sands_finalpos.contains(new_pos)
     }
 }
 
@@ -229,9 +216,18 @@ impl Sand {
 
     pub fn get_new_pos(&self) -> [(i32, i32); 3] {
         [
-            (self.pos.0, self.pos.1 + 1), //straight down
-            (self.pos.0 - 1, self.pos.1 + 1), //left down
-            (self.pos.0 + 1, self.pos.1 + 1), //right down
+            (0, 1),
+            (-1, 1),
+            (1, 1),
         ]
+        // [
+        //     (self.pos.0, self.pos.1 + 1), //straight down
+        //     (self.pos.0 - 1, self.pos.1 + 1), //left down
+        //     (self.pos.0 + 1, self.pos.1 + 1), //right down
+        // ]
+    }
+
+    pub fn calc_pos(&self, add: &(i32, i32)) -> (i32, i32) {
+        (self.pos.0 + add.0, self.pos.1 + add.1)
     }
 }
