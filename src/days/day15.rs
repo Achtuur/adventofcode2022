@@ -128,9 +128,8 @@ impl Sensor {
 
     pub fn block_on_row(&self, row: &i64, min_coord: &i64, max_coord: &i64) -> Option<std::ops::RangeInclusive<i64>> {
         let md = (self.pos.1 - row).abs(); //manhattan distance to row
-        let mut blocked = 0;
         if md < self.block_dis {
-            blocked = 2* (self.block_dis - md);
+            let blocked = 2* (self.block_dis - md);
             let min = std::cmp::max(*min_coord, self.pos.0 - blocked/2);
             let max = std::cmp::min(*max_coord, self.pos.0 + blocked/2);
             return Some(min..=max);
